@@ -1,0 +1,39 @@
+.aside {
+  padding-top: 30px;
+  &__menu {
+    &__title {
+      margin-top: 34px;
+      padding: 0 0 15px 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    &__list {
+      & li {
+        display: block;
+        padding-left: 10px;
+        @include active {
+          background: #e0e2e6;
+          border-radius: 8px 0 0 8px;
+        }
+        & a {
+          display: block;
+          line-height: 36px;
+          padding: 0 10px 0 0;
+          white-space: nowrap;
+          color: #282828;
+
+          & .core__icon {
+            font-size: 18px;
+            color: #a4a6aa !important;
+            margin: 0 8px 5px 0;
+            position: relative;
+            top: 1px;
+          }
+          @include hover {
+            color: $color-link-hover;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+&__underlines {
+  & a {
+    color: #2f2f2f;
+    & span {
+      @extend .core__underline
+    }
+  }
+}
+
+@at-root .core__underline {
+  padding: 7px 0 0;
+  font-size: inherit;
+  line-height: 1.1em;
+  font-weight: inherit;
+  color: inherit;
+  border-bottom: 1px solid;
+}

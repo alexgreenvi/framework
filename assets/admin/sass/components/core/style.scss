@@ -1,0 +1,26 @@
+.core {
+  @import "__body/style";
+  @import "__content/style";
+  @import "__btn/style";
+  @import "__btn-link/style";
+  @import "__table/style";
+
+  @import "__links/style";
+  @import "__underlines/style";
+
+  @import "__icon/style";
+  @import "__svg/style";
+
+  @import "__mobile/style";
+
+  @import "__parallax/style";
+  @import "__slider/style";
+
+  @import "__form/style";
+  @import "__tabs/style";
+  @import "__count/style";
+  @import "__full/style";
+
+  @import "__color/style";
+
+}

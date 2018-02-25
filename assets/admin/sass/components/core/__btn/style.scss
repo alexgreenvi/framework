@@ -1,0 +1,57 @@
+&__btn {
+  position: relative;
+  display: inline-block;
+  padding: 7px 18px;
+  vertical-align: middle;
+  font-size: 16px;
+  line-height: 1.35em;
+  cursor: pointer;
+  text-align: center;
+  @include transition( .15, ease-in-out);
+  @include border-radius(5px);
+  background: #00c57c;
+
+  color: #FFF;
+  & .core__btn__control {
+    display: block;
+    border-radius: 100px;
+    padding: 5px 11px;
+    color: #fff;
+  }
+  & .core__icon {
+    position: relative;
+    top: -2px;
+    margin: 5px;
+  }
+  @include hover {
+    background: $color-default-hover;
+    border-color: $color-default-hover;
+    color: #ffffff;
+  }
+
+  // Разные цвеxта
+  @include status('background','') {};
+  @include status('border','', '2px solid ');
+
+  &_danger {
+    background: $color_danger;
+    @include hover {
+      background: transparent;
+      border-color: $color_danger-hover;
+      color: $color_danger-hover;
+    }
+  }
+  // ========
+
+  // Обводка и все самый просто стиль
+  &_default {
+    background: transparent;
+    border-color: #e0e2e6;
+    color: #2c2e32;
+    @include hover {
+      background: transparent;
+      border-color: $color-link-hover;
+      color: $color-link-hover;
+    }
+  }
+}

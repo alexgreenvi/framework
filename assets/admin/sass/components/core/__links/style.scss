@@ -1,0 +1,11 @@
+&__links a,
+&__link {
+  color: #000;
+  display: inline-block;
+  line-height: 20px;
+  background: url('/assets/img/_core/link-underline.png') 0 15px repeat-x;
+  @include hover {
+    color: $color-link-hover;
+    background-image: url('/assets/img/_core/link-underline-red.png');
+  }
+}

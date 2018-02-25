@@ -1,0 +1,119 @@
+//  Шифтов
+$font:         'PT Sans', sans-serif; // Основной
+$font-2:       'Open Sans', sans-serif;
+$font-icon:    'icon';     // Шрифт с иконками
+
+// Подключение шрифтов
+// $name, $path, $weight, $style
+
+//@include font('icon', normal, normal, '');
+//@include font('PFBeauSansPro', 'PFBeauSansPro-Regular', normal, normal);
+//@include font('PFBeauSansPro', 'PFBeauSansPro-Bold', bold, normal);
+//@include font('PFBeauSansPro', 'PFBeauSansPro-Light', 300, normal);
+
+@include font-face('GaramondPremrPro', '/assets/fonts/GaramondPremrPro-MedDisp/GaramondPremrPro-MedDisp', normal, normal);
+@include font-face('GaramondPremrPro', '/assets/fonts/GaramondPremierPro-Bold/GaramondPremierPro-Bold', bold, normal);
+
+
+// Размер шрифта
+$font-size:                    1em       !default; // Стандартый шрифт
+$line-height:                  21px       !default;
+
+$font-size-small:              0.8571em   !default;
+
+// Стандартная цветовая схема
+$background:                    #edf1f2;
+$color-bg:                      #fff;
+
+$color:                         #2c2e32;
+$color-link:                    #488bfa;
+$color-link-hover:              #5c9ffa;
+
+$link-underline:                none;
+$link-underline-hover:          none; // none , underline
+
+// Массив
+$status: (
+        '': (
+                #00c57c,
+                #00b06a,
+        ),
+        primary:    (
+                #f96332,
+                #fa7a50,
+        ),
+        info:        (
+                #4b64ff,
+                #2CA8FF
+        ),
+        success:     (
+                #73d24a,
+                #0cbe63
+        ),
+        warning:     (
+                #ffa442,
+                #f96332
+        ),
+        danger:      (
+                #ff4b4b,
+                #f96332
+        ),
+);
+
+$color-default:                 nth(map-get($status, ''),1);
+$color-default-hover:           nth(map-get($status, ''),2);
+$color-primary:                 nth(map-get($status, primary),1);
+$color-primary-hover:           nth(map-get($status, primary),2);
+$color-info:                    nth(map-get($status, info),1);
+$color-info-hover:              nth(map-get($status, info),2);
+$color-success:                 nth(map-get($status, success),1);
+$color-success-hover:           nth(map-get($status, success),2);
+$color-warning:                 nth(map-get($status, warning),1);
+$color-warning-hover:           nth(map-get($status, warning),2);
+$color-danger:                  nth(map-get($status, danger),1);
+$color-danger-hover:            nth(map-get($status, danger),2);
+
+
+
+// Размеры блоков
+$container: 1140px;
+$container-aside: 270px;    // Боковой блок
+$container-margin: 20px;       // Отступ межу ними
+$container-main: ($container - $container-aside - $container-margin);
+$container-main-aside: 250px;
+$container-main-margin: 20px;
+$container-main-content : ($container-main - $container-main-aside - $container-main-margin);
+
+// Размеры экрана
+$media-size: (
+        xl: 1200px,
+        lg: 992px,
+        md: 758px,
+        sm: 576px,
+        xs: 360px,
+) !default;
+$container-media-size: (
+        xs: 0,
+        sm: 576px,
+        md: 758px,
+        lg: 992px,
+        xl: 1200px
+) !default;
+$container-max-widths: (
+        xs: 100%,
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: $container
+) !default;
+
+// Размеры на разные элементы
+$size: ( sm, null , lg);
+
+// H1
+$font-size-h1:                 1.8em        !default;   // ~ 49px
+$font-size-h2:                 1.3em        !default;   // ~ 35px
+$font-size-h3:                 1.5em        !default; // ~ 28px
+$font-size-h4:                 1.514em      !default;   // ~ 24px
+$font-size-h5:                 1.37em       !default;   // ~ 22px
+$font-size-h6:                 1em          !default;   // ~ 14px

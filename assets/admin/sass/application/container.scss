@@ -1,0 +1,177 @@
+%after {
+  &::after{
+    display: table;
+    clear: both;
+    content: "";
+  }
+}
+%block {
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  display: block;
+  float: left;
+  min-height: 1px;
+}
+%margin {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+%padding {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  position: relative;
+  @extend %after;
+
+  &-fluid {
+    position: relative;
+    width: 100%;
+    @extend %after
+  }
+
+  &-aside {
+    width: $container-aside;
+    margin-right: $container-margin;
+  }
+  &-main {
+    width: $container-main;
+    &-aside {
+      width: $container-main-aside;
+      margin-right: $container-main-margin;
+    }
+    &-content {
+      width: $container-main-content;
+    }
+  }
+
+  // Адаптивность
+  @each $name, $size in $container-media-size {
+    @media (min-width: $size) {
+      max-width: map-get($container-max-widths, $name)!important;
+      @if($size == 0) {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      // Внутренние контаинеры
+      @if($name != md and $name != sm and $name != xs) {
+        &-main {
+          width: (map-get($container-max-widths, $name) - $container-aside - $container-margin - 40);
+
+          &-aside {
+            width: $container-main-aside;
+          }
+          &-content {
+            width: (map-get($container-max-widths, $name) - $container-aside - $container-margin - 40) - $container-main-aside - $container-main-margin;
+          }
+        }
+        &-aside{
+          width: $container-aside + $container-margin;
+          //margin-right: $container-margin;
+        }
+
+      // Иначе на всю ширину
+      } @else {
+        &-main , &-aside{
+          width: 100%;
+          margin: 0;
+        }
+      }
+
+
+    }
+  }
+}
+
+.row {
+  width: 100%;
+  @extend %margin;
+  @extend %after;
+
+  &-table {
+    display: table;
+      .col {
+        width: auto;
+        display: table-cell;
+        float: none;
+        vertical-align: middle;
+      }
+    @for $i from 1 through 24 {
+      .col-#{$i} {
+        display: table-cell;
+        float: none;
+        vertical-align: middle;
+      }
+    }
+    &-top {
+      @for $i from 1 through 24 {
+        .col-#{$i} {
+          vertical-align: top;
+        }
+      }
+    }
+  }
+}
+
+
+.container-main , .container-aside,
+.container-main-aside, .container-main-content,
+.col {
+  @extend %block;
+}
+.col {
+  @extend %padding;
+  &-right {
+    float: right;
+  }
+}
+
+/**
+ * Стиль: col-24
+*/
+@for $i from 1 through 24 {
+  .col-#{$i} {
+    @extend %block;
+    @extend %padding;
+    width: (100% * $i) / 24;
+  }
+}
+@each $name, $size in $media-size {
+  @media (max-width: $size) {
+    @for $i from 1 through 24 {
+      .col-#{$name}-#{$i} {
+        width: (100% * $i) / 24;
+        display: block;
+      }
+    }
+    .col-#{$name}-0 {width: 0;}
+
+    .col-#{$name}-css-text-left {text-align: left!important}
+    .col-#{$name}-css-text-right {text-align: right!important}
+    .col-#{$name}-css-text-center {text-align: center!important}
+
+    .col-#{$name}-css-padding {padding: 20px!important}
+
+    .col-#{$name}-css-margin {margin: 20px!important}
+    .col-#{$name}-css-margin-none {margin: 0!important}
+
+    .col-#{$name}-css-padding-none {padding: 0!important}
+
+    // row
+    .row-#{$name}-table-none {
+      display: block;
+      float: left;
+      @for $i from 1 through 24 {
+        .col-#{$name}-#{$i} {
+          display: block;
+        }
+      }
+    }
+  }
+}

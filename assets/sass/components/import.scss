@@ -1,0 +1,14 @@
+// Стандартные элементы
+@import "core/style";
+@import "breadcrumbs/style";
+@import "pagination/style";
+//@import "comment/style";
+
+// Блоки
+@import "_header/style";
+@import "_footer/style";
+//@import "_aside/style";
+
+// Шаблон
+@import "block/style.scss";
+@import "catalog/style.scss";

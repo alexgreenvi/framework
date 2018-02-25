@@ -1,0 +1,72 @@
+&__select {
+  position: relative;
+  margin-bottom: 10px;
+
+  &__control {
+    @extend .core__form__input__control;
+    padding: 6px 42px 6px 14px;
+    font-size: 14px;
+    outline: none;
+    color: #2c2e32;
+    border: 2px solid #e0e2e6;
+    border-radius: 10px;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none !important;
+    background-color: #fff;
+    background: #fff url('/assets/admin/img/core/icon/core__select.png') no-repeat;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-position: 100%;
+    cursor: pointer;
+    display: inline-block;
+
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+    &:focus{
+      color: #495057;
+      border-color: #80bdff;
+      outline: 0
+    }
+    &::-ms-expand {
+      background-color: transparent;
+      border: 0
+    }
+    &::-webkit-input-placeholder,
+    &:-ms-input-placeholder,
+    &::placeholder
+    {
+      color: #868e96;
+      opacity: 1
+    }
+    // Цвет
+    @each $name, $color in $status {
+      $class: '_';
+      @if($name == '') {
+        $class: '';
+      }
+      &#{$class}#{$name}:focus{
+        border-color: #{nth($color,2)};
+      }
+    }
+  }
+  &__log {
+    position: absolute;
+    top: 27px;
+    background: #fff;
+    padding: 2px 5px;
+
+    line-height: 12px;
+    clear: both;
+    float: left;
+    font-size: 0.8em;
+    @include status(color);
+    @include transition(0.5, ease-in-out);
+  }
+}

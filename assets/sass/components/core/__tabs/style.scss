@@ -1,0 +1,17 @@
+&__tabs {
+  overflow: hidden;
+
+  &__item {
+    display: none;
+    @include transition(.6, ease);
+    overflow: hidden;
+    opacity: 0;
+
+    &.active {
+      display: block;
+      opacity: 1;
+    }
+  }
+  &__nav {
+  }
+}

@@ -1,0 +1,81 @@
+/* - Кнопка адаптивного меню */
+.menu {
+  &__button {
+    position: absolute;
+    z-index: 110;
+    display: none;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+    &:before,
+    &:after {
+      border-top:7px solid #000;
+      -webkit-transition:all .3s;
+      -moz-transition:all .3s;
+      transition:all .3s;}
+    &:before,
+    &:after {
+      content:"";
+      position:absolute;
+      display:block;
+      left:0;
+      right:0;
+    }
+    &:before {
+      top:6px;
+    }
+    &:after {
+      top:17px;
+    }
+
+    &.active{
+      border-top-color:transparent;
+    }
+    &.active:after{
+      top:12px;
+      @include transform(rotate(45deg));
+    }
+    &.active:before{
+      top:12px;
+      @include transform(rotate(-45deg));
+    }
+    @include media(lg) {
+      display: block;
+      left: 20px;
+      top: 0;
+
+      &.active {
+        top:-6px;
+      }
+    }
+  }
+  &__mobile {
+    &__alert {
+        background: none repeat scroll 0 0 #f8f9fb;
+        position: fixed;  top: 0; bottom: 0; left: 0;
+        z-index: 1000;
+        width: 250px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        @include transition-custom(transform ,0.5s, ease);
+        @include transform(translate3d(-250px, 0, 0));
+
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: -.1rem;
+          width: .1rem;
+          box-shadow: 0 0 10px #000;
+        }
+    }
+    // При активации присваивается этот класс для body
+    &_active {
+      overflow: hidden;
+      -webkit-transform: translate3d(250px, 0px, 0);
+      transform: translate3d(250px, 0px, 0);
+    }
+  }
+}

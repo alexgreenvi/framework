@@ -1,0 +1,21 @@
+&__personal-data {
+  & label {
+    vertical-align: middle;
+  }
+  &__checkbox {
+      width: 15px;
+      margin-right: 10px;
+      height: 15px;
+      vertical-align: middle;
+  }
+  &__hidden {
+    opacity: 0;
+    overflow: hidden;
+    height: 0;
+
+    &.active {
+      opacity: 1;
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.page {
+  &__index {
+    position: relative;
+    &__img {
+      @extend .container-fluid;
+      position: relative;
+      overflow: hidden;
+      background: url("/assets/img/head-bg.svg") no-repeat;
+      background-size: cover;
+
+      @include before {
+        height: 3.5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, #130a33, rgba(19,10,51,0));
+        pointer-events: none;
+        z-index: 10;
+      }
+      @include after {
+        padding-bottom: 3%;
+        background-image: url("/assets/img/line.svg");
+        width: 110%;
+        margin-left: -5%;
+        margin-bottom: -.625rem !important;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+      }
+      &__wrap {
+        text-align: center;
+        padding: 150px 150px 280px;
+      }
+      &__title {
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        & b {
+          color: #fdac32;
+        }
+      }
+      &__text {
+        color: rgba(243, 235, 246, 0.8);
+      }
+    }
+  }
+}
+
+.block {
+
+}

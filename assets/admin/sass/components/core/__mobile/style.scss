@@ -1,0 +1,16 @@
+&__mobile {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  &__menu {
+    & a {
+      font-size: 28px;
+      color: #fff;
+
+      @include hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

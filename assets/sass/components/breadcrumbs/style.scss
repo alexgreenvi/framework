@@ -1,0 +1,21 @@
+.breadcrumbs {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  font-size: 12px;
+  line-height: 28px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  & li {
+    display: inline-block;
+    padding-right: 6px;
+    color: #999;
+    &+li {
+      &:before {
+        content: '›';
+        color: $color-link-hover;
+        padding-right: 5px;
+      }
+      padding-left: 2px;
+    }
+  }
+}

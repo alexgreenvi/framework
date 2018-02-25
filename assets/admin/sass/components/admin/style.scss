@@ -1,0 +1,58 @@
+.admin {
+  &__title {  }
+  &__top {
+    position: relative;
+    margin-bottom: 50px;
+    padding: 60px 8.7% 0;
+    &__btn {
+      position: absolute;
+      top: 78px;
+      right: 8.7%;
+    }
+    &__title {
+
+    }
+    &__title__mini {
+      margin-bottom: 10px;
+    }
+    &__text {
+      color: #686a6e;
+      font-size: .9em;
+      line-height: 1.2em;
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+  }
+  &__list {
+    position: relative;
+    display: table;
+    width: 100%;
+    .item {
+      display: table-row;
+      &__cell {
+        @extend .col;
+        display: table-cell;
+        float: none;
+        &:first-child {
+          padding-left: 80px;
+        }
+        &:last-child {
+          padding-right: 80px;
+        }
+        &__wrap {
+          padding: 10px 10px;
+        }
+      }
+      &__name {
+      }
+    }
+  }
+  &__edit {
+    padding: 0 8.7%;
+    &__row {}
+    &__name {
+      display: block;
+      margin: 0 0 10px;
+    }
+  }
+}

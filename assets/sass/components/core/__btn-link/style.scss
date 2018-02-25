@@ -1,0 +1,8 @@
+&__btn-link {
+  border: 0;
+  padding: 0.5rem 0.7rem;
+  background-color: transparent;
+  @include hover {
+    text-decoration: underline;
+  }
+}

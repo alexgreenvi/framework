@@ -1,0 +1,56 @@
+&__btn {
+  position: relative;
+  display: inline-block;
+  //padding: 9px 35px;
+  padding: 4px;
+  border: none;
+  vertical-align: middle;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 1.35em;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 100px;
+  @include transition( .15, ease-in-out);
+  @include linear-gradient(-10deg, #e73535 29%, #ff6d25 71%);
+  transform: perspective(1px) translateZ(0);
+
+ // background: $color-default;
+  color: #FFF;
+  box-shadow: 0 5px 19px 0 rgba(242,86,44,.39);
+  & .core__btn__control {
+    display: block;
+    border-radius: 100px;
+    padding: 5px 11px;
+    color: #fff;
+  }
+  & .core__icon {
+    position: relative;
+    top: -2px;
+    margin: 5px;
+  }
+  @include hover {
+
+    transform: scale(1.1);
+  }
+
+  // C обводкой
+  &_border {
+    border-width: 4px;
+    @include linear-gradient(-10deg, #e73535 33%, #ff6d25 67%);
+    & .core__btn__control {
+      background-color: #ffffff;
+
+      &__text_gradient {
+        color: #e73535;
+        @include linear-gradient(-10deg, #e73535 33%, #ff6d25 67%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+  // Разные цвета
+  @include status('background','');
+  @include status('box-shadow','', 0 0 9px 0.2px );
+}

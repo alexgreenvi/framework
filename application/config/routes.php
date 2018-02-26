@@ -52,15 +52,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'pages';
 
 // admin
-$route['admin/news/cat/add']       = 'admin/news_cat_edit/$1';
-$route['admin/news/cat/delete/(:any)']    = 'admin/news_cat_delete/$1';
-$route['admin/news/cat/(:any)']    = 'admin/news_cat_edit/$1';
-$route['admin/news/cat']           = 'admin/news_cat/';
+$route['admin/news/category/add']              = 'admin/module_category_edit/$1';
+$route['admin/news/category/delete/(:any)']    = 'admin/module_category_delete/$1';
+$route['admin/news/category/edit/(:any)']      = 'admin/module_category_edit/$1';
+$route['admin/news/category']                  = 'admin/module_category/';
 
-$route['admin/news/add']           = 'admin/news_add/';
-$route['admin/news/delete/(:any)'] = 'admin/news_delete/$1';
-$route['admin/news/(:any)']        = 'admin/news_edit/$1';
-$route['admin/news/']              = 'admin/news/';
+$route['admin/news/delete/(:any)']        = 'admin/module_delete/$1';
+$route['admin/news/add']                  = 'admin/module_add/';
+$route['admin/news/edit/(:any)']          = 'admin/module_edit/$1';
+$route['admin/news']                      = 'admin/module/';
 
 //$route['admin/(:any)/(:any)'] = 'admin/module_edit/$1';
 //$route['admin/(:any)/'] = 'admin/module/';

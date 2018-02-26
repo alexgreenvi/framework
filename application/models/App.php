@@ -6,7 +6,7 @@ class App extends CI_Model {
         $arResult = array();
 
 
-        $url = $_SERVER['DOCUMENT_ROOT'].'/application/components/';
+        $url = $_SERVER['DOCUMENT_ROOT'].'/application/.components/';
 
 
         if(!empty($component)) $url .= $component.'/';
@@ -44,18 +44,39 @@ class App extends CI_Model {
     }
     function detail($table, $CODE) {
         // Выборка
-        $arResult = $this->db->query("SELECT * FROM ".$table." WHERE code='".$CODE."'")->row_array();
+        $arResult = $this->db->query("SELECT * FROM ".$table." WHERE id ='".$CODE."' OR code='".$CODE."'")->row_array();
         return $arResult;
     }
     function ajax($name , $url , $arParam){
         $data = '';
+        // Перебираем все параменты передачи
         foreach ($arParam AS $key => $value) {
             if(!empty($value)){
                 $data .= ' data-'.$key.'="'.$value.'"';
+            }
+            else {
+                $data .= ' data-'.$key.'= "false"';
             }
         }
 
         echo '<div data-ajax-form="'.$name.'" data-ajax-form-url="'.$url.'"'.$data.'>';
         echo '</div>';
+    }
+
+    function get_module_config(){
+        $arParam = array();
+        $module = $this->uri->segment(2);
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/module/'.$module.'/.config.php'); // config
+        return $arParam;
+    }
+    function get_admin_module_page($arParam){
+        if($arParam['page']['detail'] == true){
+            $arResult = array();
+            $arResult = $this->app->detail($arParam['table'], $arParam['page']['id']);
+        }
+
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/header.php'); // Header
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/module/module.php'); // module
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/footer.php'); // Footer
     }
 }

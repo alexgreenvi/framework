@@ -5,114 +5,76 @@ class Admin extends CI_Controller {
     {
         parent::__construct();
         //  Делаем в самом начале
-
-        $this->load->view('admin/templates/app/header');
-
     }
+    // Главная страница Админки
     public function index() {
-        $this->load->view('admin/index');
-        $this->load->view('admin/templates/app/footer');
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/header.php'); // Header
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/index.php');
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/footer.php'); // Footer
     }
-
-    public function news() {
-        // INDEX
-        $arData['arParam']['title'] = 'Новости сайта';
-        $arData['arParam']['table'] = 'news';
-        $arData['arParam']['count'] = $this->db->count_all('news');
-        $arData['arParam']['link']  = '/news/';
-        $arData['arParam']['menu']  = [
-            'Материалы' => '',
-            'Категории' => 'cat',
-            'Настройки' => 'config'
-        ];
-        $arData['arParam']['type'] = 'index';
-        // =====
-
-        $this->load->view('admin/module/module', $arData);
-        $this->load->view('admin/templates/app/footer');
+    // Модули
+    public function module() {
+        $arParam = $this->app->get_module_config();
+        $this->app->get_admin_module_page([
+            'page' => [
+                'name' => 'index',
+                'detail' => false,
+                'id' => null
+            ]
+        ] + $arParam);
     }
-    public function news_edit($CODE = false) {
-        // DETAIL
-        $arData['arResult'] = $this->app->detail('news',$CODE);
-        //
-        $arData['arParam']['title'] = 'Редактирование материала';
-        $arData['arParam']['table'] = 'news';
-        $arData['arParam']['count'] = $this->db->count_all('news');
-        $arData['arParam']['link']  = '/news/';
-        $arData['arParam']['menu']  = [
-            'Материалы' => '',
-            'Категории' => 'cat',
-            'Настройки' => 'config'
-        ];
-        $arData['arParam']['type'] = 'edit';
-        // =====
-        $this->load->view('admin/module/module', $arData);
-        // =======
-        $this->load->view('admin/templates/app/footer');
+    public function module_edit($ID = false) {
+        $arParam = $this->app->get_module_config();
+        $this->app->get_admin_module_page([
+            'page' => [
+                'name' => 'edit',
+                'detail' => true,
+                'id' => $ID
+            ]
+        ] + $arParam);
     }
-    public function news_add() {
-        $arData['arParam']['title'] = 'Добавление материала';
-        $arData['arParam']['table'] = 'news';
-        $arData['arParam']['count'] = $this->db->count_all('news');
-        $arData['arParam']['link']  = '/news/';
-        $arData['arParam']['menu']  = [
-            'Материалы' => '',
-            'Категории' => 'cat',
-            'Настройки' => 'config'
-        ];
-        $arData['arParam']['type'] = 'add';
-        // =====
-        $this->load->view('admin/module/module', $arData);
-        // =======
-        $this->load->view('admin/templates/app/footer');
+    public function module_add() {
+        $arParam = $this->app->get_module_config();
+        $this->app->get_admin_module_page([
+            'page' => [
+                'name' => 'add',
+                'detail' => false,
+                'id' => null
+            ]
+        ] + $arParam);
     }
-    public function news_delete($code) {
+    public function module_delete ($ID = false) {
         $table = $this->uri->segment(2);
-        $this->db->delete($table,['code' => $code]);
+        $this->db->delete($table,['id' => $ID]);
 
-        redirect('/admin/'.$table.'/', 'refresh');
+        redirect(base_url().'admin/'.$table.'/', 'refresh');
     }
-    public function news_cat() {
-        // CAT
-        $arData['arParam']['title'] = 'Новости сайта';
-        $arData['arParam']['table'] = 'news';
-        $arData['arParam']['count'] = $this->db->count_all('news');
-        $arData['arParam']['link']  = '/news/';
-        $arData['arParam']['menu']  = [
-            'Материалы' => '',
-            'Категории' => 'cat',
-            'Настройки' => 'config'
-        ];
-        // =====
-        $arData['arParam']['type'] = 'cat';
-        // =====
-        $this->load->view('admin/module/module', $arData);
-        $this->load->view('admin/templates/app/footer');
+    public function module_category () {
+        $arParam = $this->app->get_module_config();
+        $this->app->get_admin_module_page([
+                'page' => [
+                    'name' => 'categories',
+                    'detail' => false,
+                    'id' => null
+                ]
+            ] + $arParam);
     }
-    public function news_cat_edit($CODE = false) {
-        // DETAIL
-        $arData['arResult'] = $this->app->detail('cat',$CODE);
-        //
-        $arData['arParam']['title'] = 'Редактирование материала';
-        $arData['arParam']['table'] = 'cat';
-        $arData['arParam']['table_to'] = 'news';
-        $arData['arParam']['count'] = $this->db->count_all('news');
-        $arData['arParam']['link']  = '/cat/';
-        $arData['arParam']['menu']  = [
-            'Материалы' => '',
-            'Категории' => 'cat',
-            'Настройки' => 'config'
-        ];
-        $arData['arParam']['type'] = 'cat_edit';
-        // =====
-        $this->load->view('admin/module/module', $arData);
-        // =======
-        $this->load->view('admin/templates/app/footer');
+    public function module_category_edit ($ID = false) {
+        $arParam = $this->app->get_module_config();
+        $this->app->get_admin_module_page([
+                'table' => 'category',
+                'tableTo' => $arParam['table'],
+                'page'  => [
+                    'name' => 'category_edit',
+                    'detail' => true,
+                    'id' => $ID
+                ]
+            ] + $arParam );
     }
-    public function news_cat_delete($code) {
-        $table = $this->uri->segment(2);
-        $this->db->delete($table,['code' => $code]);
+    public function module_category_delete($ID = false) {
+        $table = $this->uri->segment(3);
+        $this->db->delete($table,['id' => $ID]);
 
-        redirect('/admin/'.$table.'/', 'refresh');
+        redirect(base_url().'admin/'.$table.'/category/', 'refresh');
     }
 }

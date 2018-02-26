@@ -9,7 +9,7 @@
                     </div>
                     <ul class="aside__menu__list">
                         <li>
-                            <a href="/news/" title="">
+                            <a href="/admin/news/" title="">
                                 <i class="core__icon core__icon_archive"></i>
                                 Новости сайта
                             </a>

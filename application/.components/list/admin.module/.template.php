@@ -38,16 +38,17 @@
                             <div class="item__name">
                                 <?
                                     $link_cat = null;
-                                    if($arParam['type'] == 'cat') {
+                                    if($arParam['type'] == 'category') {
                                        $link_cat = $arParam['type'].'/';
-                                    }?>
-                                <a href="/admin/<?=$this->uri->segment(2)?>/<?=$link_cat?><?=$arItem['code']?>" title="Подробнее">
+                                    }
+                                ?>
+                                <a href="/admin/<?=$this->uri->segment(2)?>/<?=$link_cat?>edit/<?=$arItem['id']?>" title="Подробнее">
                                     <?=$arItem['name']?>
                                 </a>
                             </div>
-                            <?if($ar['cat'] == true):?>
-                                <div class="item__cat"><span>Без категории</span></div>
-                            <?endif;?>
+                            <?if(isset($arItem['category_id'])){?>
+                                <div class="item__categoty"><span><?=$arItem['category']['name']?></span></div>
+                            <?}?>
                         </div>
                     </div>
                 <?endif;?>

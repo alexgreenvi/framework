@@ -30,6 +30,139 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/application\/.admin\/app\/footer.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/app\/footer.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/app\/header.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/app\/header.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/index.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/module\/.template\/add.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/module\/.template\/add.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/module\/.template\/categories.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/module\/.template\/categories.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/module\/.template\/category_edit.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/module\/.template\/category_edit.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/module\/.template\/edit.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/module\/.template\/edit.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/module\/.template\/index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/module\/.template\/index.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/module\/module.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/module\/module.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/module\/news\/.config.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/module\/news\/.config.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module.edit\/.default\/.boot.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/application\/.components\/admin.module.edit\/.default\/.boot.php",
+		"oF": 1
+		},
+	"\/application\/.components\/admin.module.edit\/.default\/.epilog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/application\/.components\/admin.module.edit\/.default\/.epilog.php",
+		"oF": 1
+		},
+	"\/application\/.components\/admin.module.edit\/.default\/.prolog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/application\/.components\/admin.module.edit\/.default\/.prolog.php",
+		"oF": 1
+		},
+	"\/application\/.components\/admin.module.edit\/.default\/.template.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/application\/.components\/admin.module.edit\/.default\/.template.php",
+		"oF": 1
+		},
+	"\/application\/.components\/list\/.default\/.boot.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/application\/.components\/list\/.default\/.boot.php",
+		"oF": 1
+		},
+	"\/application\/.components\/list\/.default\/.epilog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/application\/.components\/list\/.default\/.epilog.php",
+		"oF": 1
+		},
+	"\/application\/.components\/list\/.default\/.prolog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/application\/.components\/list\/.default\/.prolog.php",
+		"oF": 1
+		},
+	"\/application\/.components\/list\/.default\/.template.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/application\/.components\/list\/.default\/.template.php",
+		"oF": 1
+		},
+	"\/application\/.components\/list\/admin.module\/.template.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/application\/.components\/list\/admin.module\/.template.php",
+		"oF": 1
+		},
 	"\/application\/.htaccess": {
 		"cB": 0,
 		"ft": 8192,
@@ -41,69 +174,6 @@
 		"ft": 65536,
 		"oA": 1,
 		"oAP": "\/build\/application\/cache",
-		"oF": 1
-		},
-	"\/application\/components\/admin\/edit\/.boot.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/application\/components\/admin\/edit\/.boot.php",
-		"oF": 1
-		},
-	"\/application\/components\/admin\/edit\/.epilog.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/application\/components\/admin\/edit\/.epilog.php",
-		"oF": 1
-		},
-	"\/application\/components\/admin\/edit\/.prolog.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/application\/components\/admin\/edit\/.prolog.php",
-		"oF": 1
-		},
-	"\/application\/components\/admin\/edit\/.template.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/application\/components\/admin\/edit\/.template.php",
-		"oF": 1
-		},
-	"\/application\/components\/list\/.default\/.boot.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/application\/components\/list\/.default\/.boot.php",
-		"oF": 1
-		},
-	"\/application\/components\/list\/.default\/.epilog.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/application\/components\/list\/.default\/.epilog.php",
-		"oF": 1
-		},
-	"\/application\/components\/list\/.default\/.prolog.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/application\/components\/list\/.default\/.prolog.php",
-		"oF": 1
-		},
-	"\/application\/components\/list\/.default\/.template.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/application\/components\/list\/.default\/.template.php",
-		"oF": 1
-		},
-	"\/application\/components\/list\/admin\/.template.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/application\/components\/list\/admin\/.template.php",
 		"oF": 1
 		},
 	"\/application\/config\/autoload.php": {

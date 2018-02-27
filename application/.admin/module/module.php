@@ -6,7 +6,7 @@
                 <div class="aside__menu">
                     <ul class="aside__menu__list">
                         <li>
-                            <a href="/admin/<?=$this->uri->segment(2)?>/" title="Назад">
+                            <a href="/admin/" title="Назад">
                                 <i class="core__icon core__icon_arrow-large-left"></i>
                                 Назад
                             </a>

@@ -53,7 +53,7 @@ class Admin extends CI_Controller {
         $arParam = $this->app->get_module_config();
         $this->app->get_admin_module_page([
                 'page' => [
-                    'name' => 'categories',
+                    'name' => 'category',
                     'detail' => false,
                     'id' => null
                 ]
@@ -72,8 +72,8 @@ class Admin extends CI_Controller {
             ] + $arParam );
     }
     public function module_category_delete($ID = false) {
-        $table = $this->uri->segment(3);
-        $this->db->delete($table,['id' => $ID]);
+        $table = $this->uri->segment(2);
+        $this->db->delete('category',['id' => $ID]);
 
         redirect(base_url().'admin/'.$table.'/category/', 'refresh');
     }

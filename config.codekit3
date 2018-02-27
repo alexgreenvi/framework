@@ -58,11 +58,11 @@
 		"oAP": "\/application\/.admin\/module\/.template\/add.php",
 		"oF": 0
 		},
-	"\/application\/.admin\/module\/.template\/categories.php": {
+	"\/application\/.admin\/module\/.template\/category.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/application\/.admin\/module\/.template\/categories.php",
+		"oAP": "\/application\/.admin\/module\/.template\/category.php",
 		"oF": 0
 		},
 	"\/application\/.admin\/module\/.template\/category_edit.php": {

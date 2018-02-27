@@ -29,6 +29,10 @@ class App extends CI_Model {
             include ($url.'.default/.boot.php');
         };
 
+        // template
+        if(empty($template)) $template = '.template';
+        if(file_exists($url.$url_name.$template.'.php')) include ($url.$url_name.$template.'.php');
+
         // epilog
         if(file_exists($url.'.epilog.php')){
             include ($url.'.epilog.php');
@@ -36,11 +40,6 @@ class App extends CI_Model {
         elseif(file_exists($url.'.default/.epilog.php')){
             include ($url.'.default/.epilog.php');
         };
-
-        // template
-        if(empty($template)) $template = '.template';
-
-        if(file_exists($url.$url_name.$template.'.php')) include ($url.$url_name.$template.'.php');
     }
     function detail($table, $CODE) {
         // Выборка

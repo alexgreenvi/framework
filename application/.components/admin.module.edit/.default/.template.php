@@ -105,9 +105,9 @@
             </div>
         <?endif;?>
     <?endforeach;?>
-    <a href="/admin/<?=$arParam['table']?>/" title="" class="core__btn core__btn_default"><span>Отменить</span></a>
+        <a href="<?=$arParam['link']?>" title="" class="core__btn core__btn_default"><span>Отменить</span></a>
     <?if($arParam['type'] == 'edit' OR $arParam['type'] == 'category_edit'):?>
-        <a href="/admin/<?=$arParam['table']?>/delete/<?=$arParam['value']['ajaxFormId']?>" title="" class="core__btn core__btn_danger"><span>Удалить</span></a>
+        <a href="<?=$arParam['link']?>delete/<?=$arParam['value']['ajaxFormId']?>" title="" class="core__btn core__btn_danger"><span>Удалить</span></a>
     <?endif;?>
     <button class="core__btn">
         <span>

@@ -86,6 +86,14 @@ if(isset($arParam['value']['date'])){
     $arBase['date'] = date("Y-m-d H:i:s");
 }
 
+// Ссылки для переходов
+$arParam['link'] = null;
+if($arParam['table'] == 'category') {
+    $arParam['link'] = '/admin/'.$arParam['value']['ajaxFormTableTo'].'/category/';
+}else{
+    $arParam['link'] = '/admin/'.$arParam['table'].'/';
+}
+
 // Обновляем данные
 if($ajaxFormButton == 'push' AND $error == false) {
 

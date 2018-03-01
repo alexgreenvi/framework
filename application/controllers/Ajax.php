@@ -1,41 +1,13 @@
 <?php defined('BASEPATH') OR exit('Нет прямого доступа к скрипту');
 
 class Ajax extends CI_Controller {
-
     public function module($type) {
-        // Редактирование материалов
-        foreach ($_POST AS $key => $val) {
-            if(!empty($val)){
-                $value[$key] = trim($val);
-            }
-        }
         if($type == 'edit' OR $type == 'add') {
+            $arModule = $this->app->get_module_config($_POST['ajaxFormModuleCode']);
             $this->app->component('admin.module.edit', '', '', [
-                'table' => $_POST['ajaxFormTable'],
-                'code' =>  $_POST['ajaxFormCode'],
-                'value' => $value, // Все данный POST
-                'input' => [
-                    'id' => [
-                        'name' => '',
-                        'type' => 'hidden'
-                    ],
-                    'name' => [
-                        'name' => 'Название',
-                        'description' => ''
-                    ],
-                    'code' => [
-                        'name' => 'Человекопонятный URL (ЧПУ)',
-                        'description' => ''
-                    ],
-                    'category_id' => [
-                        'name' => 'Категория',
-                        'description' => ''
-                    ],
-                    'description' => [
-                        'name' => 'Полный текст материала',
-                        'description' => ''
-                    ]
-                ],
+                'post' => $_POST, // Все данный POST
+                'files' => $_FILES, // Все данный FILES
+                'module' => $arModule,
                 'type' => $type
             ]);
         }

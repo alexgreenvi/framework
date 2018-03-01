@@ -49,10 +49,33 @@
   }
   &__edit {
     padding: 0 8.7%;
-    &__row {}
+    &__row {
+      &__left,
+      &__right {
+        @extend .col-12;
+      }
+      &_img {
+        @extend .row;
+        .admin__edit__row__left {
+          @extend .col-6;
+        }
+        .admin__edit__row__right {
+          @extend .col-18;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+      }
+    }
     &__name {
       display: block;
       margin: 0 0 10px;
+    }
+    &__description {
+      color: #686a6e;
+      font-size: .9em;
+      line-height: 1.3em;
+      margin-bottom: 12px;
+      font-weight: 400;
     }
   }
 }

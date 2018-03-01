@@ -14,34 +14,40 @@ class Admin extends CI_Controller {
     }
     // Модули
     public function module() {
-        $arParam = $this->app->get_module_config();
+        $module_code = $this->uri->segment(2);
+        $arModule = $this->app->get_module_config($module_code);
         $this->app->get_admin_module_page([
+            'module' => $arModule,
             'page' => [
                 'name' => 'index',
                 'detail' => false,
                 'id' => null
-            ]
-        ] + $arParam);
+            ],
+        ]);
     }
     public function module_edit($ID = false) {
-        $arParam = $this->app->get_module_config();
+        $module_code = $this->uri->segment(2);
+        $arModule = $this->app->get_module_config($module_code);
         $this->app->get_admin_module_page([
+            'module' => $arModule,
             'page' => [
                 'name' => 'edit',
                 'detail' => true,
                 'id' => $ID
             ]
-        ] + $arParam);
+        ]);
     }
     public function module_add() {
-        $arParam = $this->app->get_module_config();
+        $module_code = $this->uri->segment(2);
+        $arModule = $this->app->get_module_config($module_code);
         $this->app->get_admin_module_page([
+            'module' => $arModule,
             'page' => [
                 'name' => 'add',
                 'detail' => false,
                 'id' => null
             ]
-        ] + $arParam);
+        ]);
     }
     public function module_delete ($ID = false) {
         $table = $this->uri->segment(2);

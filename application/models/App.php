@@ -41,9 +41,9 @@ class App extends CI_Model {
             include ($url.'.default/.epilog.php');
         };
     }
-    function detail($table, $CODE) {
+    function detail($CODE) {
         // Выборка
-        $arResult = $this->db->query("SELECT * FROM ".$table." WHERE id ='".$CODE."' OR code='".$CODE."'")->row_array();
+        $arResult = $this->db->query("SELECT * FROM module_element WHERE id ='".$CODE."' OR code='".$CODE."'")->row_array();
         return $arResult;
     }
     function ajax($name , $url , $arParam){
@@ -62,18 +62,21 @@ class App extends CI_Model {
         echo '</div>';
     }
 
-    function get_module_config(){
-        $arParam = array();
-        $module = $this->uri->segment(2);
-        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/module/'.$module.'/.config.php'); // config
-        return $arParam;
+    // MODULES
+    function get_module_config($CODE){
+        $arModule = array();
+        $arModule['code'] = $CODE; // CODE модуля
+        // Выбираем нужный модуль
+        $arModule = $this->db->query("SELECT * FROM module WHERE code = '".$arModule['code']."'")->row_array();
+        // Загружаем все параметры
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/module/'.$arModule['code'].'/.config.php'); // config
+        return $arModule;
     }
     function get_admin_module_page($arParam){
         if($arParam['page']['detail'] == true){
             $arResult = array();
-            $arResult = $this->app->detail($arParam['table'], $arParam['page']['id']);
+            $arResult = $this->app->detail($arParam['page']['id']);
         }
-
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/header.php'); // Header
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/module/module.php'); // module
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/footer.php'); // Footer

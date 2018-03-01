@@ -7,33 +7,24 @@
  *
  */
 ?>
+<form action="handler.php" method="post" enctype="multipart/form-data">
 <div class="admin__edit">
-    <?foreach ($arParam['input'] as $name => $array):?>
-        <?
-        // * id - Уникальный индекс
-        ?>
-        <?if($name === 'id'):?>
-            <input name="<?=$name?>" type="<?=$array['type']?>" value="<?=$arParam['value'][$name];?>">
-        <?endif;?>
-        <?
-        // * table_name - Таблица
-        ?>
-        <?if($name === 'table_name'):?>
-            <input name="<?=$name?>" type="<?=$array['type']?>" value="<?=$arParam['value']['ajaxFormTableTo']?>">
-        <?endif;?>
+    <input name="id" type="hidden" value="<?=$arParam['post']['id'];?>">
+    <input name="module_id" type="hidden" value="<?=$arParam['post']['ajaxFormModuleId']?>">
+    <?foreach ($arParam['module']['field'] as $name => $inf):?>
         <?
         // * code - Уникальный код, для обращения
         ?>
         <?if($name === 'code'):?>
             <div class="admin__edit__row">
                 <div class="admin__edit__name">
-                    <span><?=$array['name']?></span>
+                    <span><?=$inf['name']?></span>
                 </div>
                 <div class="admin__edit__input">
-                    <div class="core__form__input <?=$arParam['input'][$name]['error']['type']?>">
-                        <input name="<?=$name?>" class="core__form__input__control" value="<?=$arParam['value'][$name];?>">
-                        <?if(!empty($arParam['input'][$name]['error']['text'])):?>
-                            <div class="core__form__input__log"><?=$arParam['input'][$name]['error']['text']?></div>
+                    <div class="core__form__input <?=$inf['error']['type']?>">
+                        <input name="<?=$name?>" class="core__form__input__control" value="<?=$arParam['post'][$name];?>">
+                        <?if(!empty($inf['error']['text'])):?>
+                            <div class="core__form__input__log"><?=$inf['error']['text']?></div>
                         <?endif;?>
                     </div>
                 </div>
@@ -42,29 +33,29 @@
         <?
         // * cat - Категория
         ?>
-        <?if($name === 'category_id'):?>
+        <?if($name === 'module_category_id'):?>
             <div class="admin__edit__row">
                 <div class="admin__edit__name">
-                    <span><?=$array['name']?></span>
+                    <span><?=$inf['name']?></span>
                 </div>
                 <div class="admin__edit__input">
-                    <div class="core__form__input <?=$arParam['input'][$name]['error']['type']?>">
+                    <div class="core__form__input <?=$inf['error']['type']?>">
                         <select name="<?=$name?>" class="core__form__select__control">
-                            <?if(!sizeof($arParam['category'])):?>
+                            <?if(!sizeof($arParam['module_category'])):?>
                                 <optgroup label="Категорий нет"></optgroup>
                             <?else:?>
                                 <option value="0">Без категории</option>
-                                <?foreach ($arParam['category'] as $item):?>
+                                <?foreach ($arParam['module_category'] as $item):?>
                                     <?
                                     $select = 'selected="selected"';
-                                    if($item['id'] != $arParam['value']['category_id']) $select = null;
+                                    if($item['id'] != $arParam['post']['module_category_id']) $select = null;
                                     ?>
                                     <option value="<?=$item['id']?>" <?=$select?>><?=$item['name']?></option>
                                 <?endforeach;?>
                             <?endif;?>
                         </select>
-                        <?if(!empty($arParam['input'][$name]['error']['text'])):?>
-                            <div class="core__form__input__log"><?=$arParam['input'][$name]['error']['text']?></div>
+                        <?if(!empty($inf['error']['text'])):?>
+                            <div class="core__form__input__log"><?=$inf['error']['text']?></div>
                         <?endif;?>
                     </div>
                 </div>
@@ -76,13 +67,13 @@
         <?if($name === 'name'):?>
             <div class="admin__edit__row">
                 <div class="admin__edit__name">
-                    <span><?=$array['name']?></span>
+                    <span><?=$inf['name']?></span>
                 </div>
                 <div class="admin__edit__input">
-                    <div class="core__form__input <?=$arParam['input'][$name]['error']['type']?>">
-                        <input name="<?=$name?>" class="core__form__input__control" value="<?=$arParam['value'][$name]?>">
-                        <?if(!empty($arParam['input'][$name]['error']['text'])):?>
-                            <div class="core__form__input__log"><?=$arParam['input'][$name]['error']['text']?></div>
+                    <div class="core__form__input <?=$inf['error']['type']?>">
+                        <input name="<?=$name?>" class="core__form__input__control" value="<?=$arParam['post'][$name]?>">
+                        <?if(!empty($inf['error']['text'])):?>
+                            <div class="core__form__input__log"><?=$inf['error']['text']?></div>
                         <?endif;?>
                     </div>
                 </div>
@@ -94,25 +85,77 @@
         <?if($name === 'description'):?>
             <div class="admin__edit__row">
                 <div class="admin__edit__name">
-                    <span><?=$array['name']?></span>
+                    <span><?=$inf['name']?></span>
                 </div>
-                <div class="core__form__text <?=$arParam['input'][$name]['error']['type']?>">
-                    <textarea name="<?=$name?>" class="core__form__text__control"><?=$arParam['value'][$name]?></textarea>
-                    <?if(!empty($arParam['input'][$name]['error']['text'])):?>
-                        <div class="core__form__input__log"><?=$arParam['input'][$name]['error']['text']?></div>
+                <div class="core__form__text <?=$inf['error']['type']?>">
+                    <textarea name="<?=$name?>" class="core__form__text__control"><?=$arParam['post'][$name]?></textarea>
+                    <?if(!empty($inf['error']['text'])):?>
+                        <div class="core__form__input__log"><?=$inf['error']['text']?></div>
                     <?endif;?>
                 </div>
             </div>
         <?endif;?>
+        <?
+        // * img_preview - Название
+        ?>
+        <?if($name === 'img_preview' OR $name === 'img_detail'):?>
+            <div class="admin__edit__row admin__edit__row_img">
+                <div class="admin__edit__row__left">
+                    <div class="core__form__file">
+                        <label style="background-image: url('<?=$arParam['post'][$name]?>');">
+                            <?if(!empty($arParam['old'][$name]) AND !file_exists($_SERVER['DOCUMENT_ROOT'].$arParam['post'][$name])):?>
+                                <i class="core__form__file__icon core__icon core__icon_your-files"></i>
+                                <span class="core__form__file__text">Идет загрузка файла</span>
+                            <?else:?>
+                                <i class="core__form__file__icon core__icon core__icon_arrow-circle-o-up"></i>
+                                <span class="core__form__file__text"><?=$inf['name']?></span>
+                            <?endif;?>
+                            <input type="file" name="<?=$name?>" value="<?=$arParam['post'][$name]?>">
+                        </label>
+                    </div>
+                </div>
+                <div class="admin__edit__row__right">
+                    <div class="admin__edit__name">
+                        <span><?=$inf['name']?></span>
+                    </div>
+                    <div class="admin__edit__description">
+                    <span>
+                        Форматы GIF, JPEG, PNG.<br>
+                        Каждой картинке соответствует код $IMAGE1$, $IMAGE2$, $IMAGE3$ и т.д. Для выравнивания используйте $IMAGE1-left$
+                    </span>
+                    </div>
+                </div>
+            </div>
+        <?endif;?>
+        <?
+        // Дополнительные поля
+        // * img_preview - Название
+        ?>
+        <div class="admin__edit__row admin__edit__row_img">
+            <?for ($i = 1; $i < 10; $i++){?>
+                <?if($name === 'addition_img_'.$i):?>
+                    <div class="col-6">
+                        <div class="core__form__file">
+                            <label style="background-image: url('<?=$arParam['post'][$name]?>');">
+                                <i class="core__form__file__icon core__icon core__icon_arrow-circle-o-up"></i>
+                                <span class="core__form__file__text"><?=$inf['name']?></span>
+                                <input type="file" name="<?=$name?>" value="<?=$arParam['post'][$name]?>">
+                            </label>
+                        </div>
+                    </div>
+                <?endif;?>
+            <?}?>
+        </div>
     <?endforeach;?>
         <a href="<?=$arParam['link']?>" title="" class="core__btn core__btn_default"><span>Отменить</span></a>
     <?if($arParam['type'] == 'edit' OR $arParam['type'] == 'category_edit'):?>
-        <a href="<?=$arParam['link']?>delete/<?=$arParam['value']['ajaxFormId']?>" title="" class="core__btn core__btn_danger"><span>Удалить</span></a>
+        <a href="<?=$arParam['link']?>delete/<?=$arParam['post']['ajaxFormModuleElementId']?>" title="" class="core__btn core__btn_danger"><span>Удалить</span></a>
     <?endif;?>
-    <button class="core__btn">
+    <button class="core__btn" name="push">
         <span>
             <?if($arParam['type'] == 'edit' OR $arParam['type'] == 'category_edit') echo 'Изменить'?>
             <?if($arParam['type'] == 'add' OR $arParam['type'] == 'category_add')  echo 'Добавить'?>
         </span>
     </button>
 </div>
+</form>

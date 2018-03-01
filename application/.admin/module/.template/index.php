@@ -1,16 +1,16 @@
 <div class="admin__top">
     <div class="admin__top__btn">
-        <a href="/admin/<?=$arParam['table']?>/add" title="" class="core__btn"><span>Добавить</span></a>
+        <a href="/admin/<?=$arParam['module']['code']?>/add" title="" class="core__btn"><span>Добавить</span></a>
     </div>
     <div class="admin__top__title">
-        <h1><?=$arParam['title']?></h1>
+        <h1><?=$arParam['module']['name']?></h1>
     </div>
     <div class="admin__top__text">
-        Количесво материалов : <?=$arParam['count']?>
+        Количесво материалов : <?=$arParam['module']['count']?>
     </div>
 </div>
 <?$this->app->component('list' , 'admin.module' , '', [
-    'from' => $arParam['table'],
+    'module' => $arParam['module']['code'],
     'type' => '',
     'table' => [
         'name' => [

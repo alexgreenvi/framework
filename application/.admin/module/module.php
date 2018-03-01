@@ -13,10 +13,15 @@
                         </li>
                     </ul>
                     <div class="aside__menu__title">
-                        <span><?=$arParam['title']?></span>
+                        <span><?=$arParam['module']['name']?></span>
                     </div>
                     <ul class="aside__menu__list">
-                        <?foreach ($arParam['menu'] as $key => $item):?>
+                        <?$menu = [
+                                'Материалы' => '',
+                                'Категории' => 'categories',
+                                'Настройки' => 'config'
+                        ]?>
+                        <?foreach ($menu as $key => $item):?>
                             <?
                             $class = null;
                             if($this->uri->segment(3) == $item) $class = 'active';

@@ -6,18 +6,24 @@
  * @arItem массив отдельного элемента
  */
 
-// Выборка
-$this->db->select($arParam['select']);
-$this->db->from($arParam['from']);
+// Выбираем модуль
+$this->db->from('module');
+$this->db->where('code',$arParam['module']);
 
-$arResult = $this->db->get();
-$arResult = $arResult->result_array();
+$arParam['module'] = $this->db->get()->row_array();
+// Выбираем сам елемент
+$this->db->from('module_element');
+$this->db->where('module_id', $arParam['module']['id']);
+
+$arResult = $this->db->get()->result_array();
 // =====
 // Обработка
 
 foreach ($arResult as $key => $arItem){
+    // Модуль
+    $arResult[$key]['module'] = $arParam['module'];
     // Категория
-    if(isset($arItem['category_id'])){
-        $arResult[$key]['category'] = $this->db->query("SELECT * FROM category WHERE id = '".$arItem['category_id']."'")->row_array();
+    if(!empty($arItem['module_category_id'])){
+        $arResult[$key]['category'] = $this->db->query("SELECT * FROM module_category WHERE id = '".$arItem['module_category_id']."'")->row_array();
     }
 }

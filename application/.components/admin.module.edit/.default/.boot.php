@@ -7,17 +7,17 @@
  */
 // Создаем подя (Ошибки)
 $arInputIsset = ['name','type','description'];
-foreach ($arParam['input'] as $name => $array) {
+foreach ($arParam['module']['field'] as $name => $array) {
     foreach ($arInputIsset as $inputIsset) {
-        if(!isset($arParam['input'][$name][$inputIsset])){
-            $arParam['input'][$name][$inputIsset] = '';
+        if(!isset($arParam['module']['field'][$name][$inputIsset])){
+            $arParam['module']['field'][$name][$inputIsset] = '';
         }
     }
-    $arParam['input'][$name]['error'] = '';
+    $arParam['module']['field'][$name]['error'] = '';
 }
 
 // Выбираем все поля из тамблицы
-$fields = $this->db->list_fields($_POST['ajaxFormTable']);
+$fields = $this->db->list_fields('module_element');
 $ajaxFormButton = null;
 
 // Какой статус отправки
@@ -28,28 +28,26 @@ if(isset($_POST['ajaxFormButton'])){
 }
 // Быбираем сам материал
 // * Если есть отправка то берем то что в отправленно, иначе то что уже было в базе
-if($ajaxFormButton == false && $_POST['ajaxForm'] == 'edit' OR $_POST['ajaxForm'] == 'category_edit'){
-    $arParam['old'] = $this->db->query("SELECT * FROM ".$_POST['ajaxFormTable']." WHERE id = '".$_POST['ajaxFormId']."'")->row_array();
+if($_POST['ajaxForm'] == 'edit' OR $_POST['ajaxForm'] == 'category_edit'){
+    $arParam['old'] = $this->db->query("SELECT * FROM module_element WHERE id = '".$arParam['post']['ajaxFormModuleElementId']."'")->row_array();
 
     foreach ($fields as $field) {
-        if(!empty($arParam['old'][$field]) AND !isset($arParam['value'][$field])) { // Если существует такое поле как в таблице
-            $arParam['value'][$field] = $arParam['old'][$field];
-        }else{
-            $arParam['value'][$field] = null;
+        if(empty($arParam['post'][$field])) { // Если существует такое поле как в таблице
+            $arParam['post'][$field] = $arParam['old'][$field];
         }
     }
 }
 // Категория
-$arParam['category'] = $this->db->query("SELECT * FROM category WHERE table_name = '".$_POST['ajaxFormTable']."'")->result_array();
+$arParam['module_category'] = $this->db->query("SELECT * FROM module_category WHERE module_id = '".$arParam['post']['ajaxFormModuleId']."'")->result_array();
 
 
 $arBase = array();
 // Добавляем все в массив для добавления
 foreach ($fields as $field) {
-    if(isset($arParam['value'][$field])) {
-        $arBase[$field] = get_clean($arParam['value'][$field]);
+    if(isset($arParam['post'][$field])) {
+        $arBase[$field] = get_clean($arParam['post'][$field]);
     }else{
-        $arParam['value'][$field] = '';
+        $arParam['post'][$field] = '';
         $arBase[$field] = '';
     }
 }
@@ -57,59 +55,81 @@ foreach ($fields as $field) {
 // * Проверка полей
 // * Создаем все поля
 $error = false;
-foreach ($arParam['input'] as $name => $array) {
-    $arParam['input'][$name]['error'] = check_field($name, $arParam['value'][$name]);
+foreach ($arParam['module']['field'] as $name => $array) {
+    $arParam['module']['field'][$name]['error'] = check_field($name, $arParam['post'][$name]);
 
     // Если хоть одно поле есть с ошибкой
-    if (!empty($arParam['input'][$name]['error']['text'])) {
+    if (!empty($arParam['module']['field'][$name]['error']['text'])) {
         $error = true;
     }
 }
 
 // Проверяем code чтобы не было повторений
-if(!empty($arParam['value']['code']) AND $arParam['type'] == 'add' OR $arParam['type'] == 'category_add') {
-    if($this->db->query("SELECT code FROM ".$arParam['table']." WHERE code='".$arParam['value']['code']."'")->row_array()) {
+if(!empty($arParam['post']['code']) AND $arParam['type'] == 'add' OR $arParam['type'] == 'category_add') {
+    if($this->db->query("SELECT code FROM module_element WHERE code='".$arParam['post']['code']."'")->row_array()) {
         $error = true;
-        $arParam['input']['code']['error']['type'] = 'core__form__input_warning';
-        $arParam['input']['code']['error']['text'] = 'Такой ключ уже используется';
+        $arParam['module']['field']['code']['error']['type'] = 'core__form__input_warning';
+        $arParam['module']['field']['code']['error']['text'] = 'Такой ключ уже используется';
     }
-} elseif (!empty($arParam['value']['code']) AND $arParam['type'] == 'edit' OR $arParam['type'] == 'category_edit') {
-    if($this->db->query("SELECT code FROM ".$arParam['table']." WHERE id !='".$arParam['value']['id']."' AND code='".$arParam['value']['code']."'")->row_array()) {
+} elseif (!empty($arParam['post']['code']) AND $arParam['type'] == 'edit' OR $arParam['type'] == 'category_edit') {
+    if($this->db->query("SELECT code FROM module_element WHERE id !='".$arParam['post']['id']."' AND code='".$arParam['post']['code']."'")->row_array()) {
         $error = true;
-        $arParam['input']['code']['error']['type'] = 'core__form__input_warning';
-        $arParam['input']['code']['error']['text'] = 'Такой ключ уже используется';
+        $arParam['module']['field']['code']['error']['type'] = 'core__form__input_warning';
+        $arParam['module']['field']['code']['error']['text'] = 'Такой ключ уже используется';
     }
 }
 // * Описание
 
-if(isset($arParam['value']['date'])){
+if(isset($arParam['post']['date'])){
     $arBase['date'] = date("Y-m-d H:i:s");
 }
 
 // Ссылки для переходов
 $arParam['link'] = null;
-if($arParam['table'] == 'category') {
-    $arParam['link'] = '/admin/'.$arParam['value']['ajaxFormTableTo'].'/category/';
-}else{
-    $arParam['link'] = '/admin/'.$arParam['table'].'/';
+//if($arParam['page'] == 'category') {
+//    $arParam['link'] = '/admin/'.$arParam['post']['ajaxFormModuleCode'].'/category/';
+//}else{
+//    $arParam['link'] = '/admin/'.$arParam['post']['ajaxFormModuleCode'].'/';
+//}
+// Удаляем поля с картинками
+unset($arBase['img_preview']);
+unset($arBase['img_detail']);
+for ($i = 1; $i < 10; $i++){
+    unset($arBase['addition_img_'.$i]);
+    unset($arBase['addition_'.$i]);
 }
 
 // Обновляем данные
-if($ajaxFormButton == 'push' AND $error == false) {
+$id = $arBase['id'];
 
+if($ajaxFormButton == 'push' AND $error == false) {
     if($arParam['type'] == 'edit' OR $arParam['type'] == 'category_edit') {
         // Редактируем
-        $this->db->where('id',$arBase['id'])->update($_POST['ajaxFormTable'],$arBase);
+        $this->db->where('id',$arBase['id'])->update('module_element',$arBase);
     } elseif ($arParam['type'] == 'add' OR $arParam['type'] == 'category_add') {
         // Добавляем
         unset($arBase['id']);
-        foreach ($arParam['value'] as $key => $val) {
-            $arParam['value'][$key] = '';
+        foreach ($arParam['post'] as $key => $val) {
+            $arParam['post'][$key] = '';
         }
-
-        $this->db->insert($_POST['ajaxFormTable'],$arBase);
+        $this->db->insert('module_element',$arBase);
+        $id = $this->db->insert_id();
     }
 }
+// Файлы
+$config['allowed_types'] = 'gif|jpg|png';
+$config['overwrite'] = true; // Перезапись
+$config['max_size'] = '10000';
 
-
-
+if(!empty($arParam['files']) AND !empty($id)) {
+    foreach ($arParam['files'] as $key => $arItem){
+        // Превью картинка
+        $config['upload_path'] = './uploads/'.$arParam['post']['ajaxFormModuleCode'].'/';
+        $config['file_name'] = $id.'-'.$key;
+        $this->load->library('upload', $config);
+        $this->upload->do_upload($key);
+        // Обновляем данные
+        $arBase[$key] = '/uploads/'.$arParam['post']['ajaxFormModuleCode'].'/'.$this->upload->data('file_name');;
+        $this->db->where('id',$arBase['id'])->update('module_element',$arBase);
+    }
+}

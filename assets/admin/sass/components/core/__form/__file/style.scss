@@ -1,0 +1,35 @@
+&__file {
+  @include border-radius(9px);
+  color: #a4a6aa;
+  &:hover {
+    background: #fff;
+  }
+  & input[type="file"] {
+    display: none; /* Обязательно скрываем настоящий Input File */
+  }
+  & label {
+    display: block;
+    @include border-radius(9px);
+    border: 2px dashed #e0e2e6;
+    padding: 16px 16px 4px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 13px;
+    background-size: cover;
+    background-position: center;
+  }
+  & span {
+    line-height: 18px; /* Делаем вертикальное выравнивание текста, который написан на кнопке */
+  }
+
+  &__icon {
+    display: block;
+    font-size: 40px;
+    margin: 10px 0 20px;
+  }
+  &__text {
+    color: #686a6e;
+    font-size: .9em;
+    line-height: 1.2em;
+  }
+}

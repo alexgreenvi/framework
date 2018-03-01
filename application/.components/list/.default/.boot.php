@@ -12,7 +12,11 @@ $this->db->where('code',$arParam['module']);
 
 $arParam['module'] = $this->db->get()->row_array();
 // Выбираем сам елемент
-$this->db->from('module_element');
+if($arParam['type'] == 'category') {
+    $this->db->from('module_category');
+}else {
+    $this->db->from('module_element');
+}
 $this->db->where('module_id', $arParam['module']['id']);
 
 $arResult = $this->db->get()->result_array();

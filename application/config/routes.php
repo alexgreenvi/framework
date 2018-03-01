@@ -52,10 +52,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'pages';
 
 // admin
-$route['admin/news/category/add']              = 'admin/module_category_edit/$1';
+$route['admin/news/category/add']              = 'admin/module_category_add/$1';
 $route['admin/news/category/delete/(:any)']    = 'admin/module_category_delete/$1';
 $route['admin/news/category/edit/(:any)']      = 'admin/module_category_edit/$1';
-$route['admin/news/category']                  = 'admin/module_category/';
+$route['admin/news/categories']                = 'admin/module_category/';
 
 $route['admin/news/delete/(:any)']        = 'admin/module_delete/$1';
 $route['admin/news/add']                  = 'admin/module_add/';

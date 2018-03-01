@@ -50,37 +50,56 @@ class Admin extends CI_Controller {
         ]);
     }
     public function module_delete ($ID = false) {
-        $table = $this->uri->segment(2);
-        $this->db->delete($table,['id' => $ID]);
+        $module_code = $this->uri->segment(2);
+        $arModule = $this->app->get_module_config($module_code);
 
-        redirect(base_url().'admin/'.$table.'/', 'refresh');
+        $this->db->delete('module_element',['id' => $ID,'module_id' => $arModule['id']]);
+        redirect(base_url().'admin/'.$arModule['code'].'/', 'refresh');
     }
+
     public function module_category () {
-        $arParam = $this->app->get_module_config();
+        $module_code = $this->uri->segment(2);
+        $arModule = $this->app->get_module_config($module_code);
         $this->app->get_admin_module_page([
-                'page' => [
-                    'name' => 'category',
-                    'detail' => false,
-                    'id' => null
-                ]
-            ] + $arParam);
+            'module' => $arModule,
+            'page' => [
+                'name' => 'category',
+                'detail' => false,
+                'id' => null
+            ]
+        ]);
     }
     public function module_category_edit ($ID = false) {
-        $arParam = $this->app->get_module_config();
+        $module_code = $this->uri->segment(2);
+        $arModule = $this->app->get_module_config($module_code);
         $this->app->get_admin_module_page([
-                'table' => 'category',
-                'tableTo' => $arParam['table'],
-                'page'  => [
-                    'name' => 'category_edit',
-                    'detail' => true,
-                    'id' => $ID
-                ]
-            ] + $arParam );
+            'module' => $arModule,
+            'category' => true,
+            'page' => [
+                'name' => 'category_edit',
+                'detail' => true,
+                'id' =>  $ID
+            ]
+        ]);
+    }
+    public function module_category_add() {
+        $module_code = $this->uri->segment(2);
+        $arModule = $this->app->get_module_config($module_code);
+        $this->app->get_admin_module_page([
+            'module' => $arModule,
+            'category' => true,
+            'page' => [
+                'name' => 'category_add',
+                'detail' => false,
+                'id' => null
+            ]
+        ]);
     }
     public function module_category_delete($ID = false) {
-        $table = $this->uri->segment(2);
-        $this->db->delete('category',['id' => $ID]);
+        $module_code = $this->uri->segment(2);
+        $arModule = $this->app->get_module_config($module_code);
 
-        redirect(base_url().'admin/'.$table.'/category/', 'refresh');
+        $this->db->delete('module_category',['id' => $ID,'module_id' => $arModule['id']]);
+        redirect(base_url().'admin/'.$arModule['code'].'/', 'refresh');
     }
 }

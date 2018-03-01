@@ -65,6 +65,13 @@
 		"oAP": "\/application\/.admin\/module\/.template\/category.php",
 		"oF": 0
 		},
+	"\/application\/.admin\/module\/.template\/category_add.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/module\/.template\/category_add.php",
+		"oF": 0
+		},
 	"\/application\/.admin\/module\/.template\/category_edit.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -4619,6 +4626,17 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/uploads\/news\/67-img_preview.png": {
+		"ft": 32768,
+		"iS": 35677,
+		"oA": 0,
+		"oAP": "\/uploads\/news\/67-img_preview.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		}

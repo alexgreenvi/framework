@@ -102,4 +102,19 @@ class Admin extends CI_Controller {
         $this->db->delete('module_category',['id' => $ID,'module_id' => $arModule['id']]);
         redirect(base_url().'admin/'.$arModule['code'].'/', 'refresh');
     }
+
+    // Пользователи
+    public function user() {
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/header.php'); // Header
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/user/login.php');
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/footer.php'); // Footer
+    }
+    public function user_login() {
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/header.php'); // Header
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/user/login.php');
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/footer.php'); // Footer
+    }
+    public function user_exit(){
+
+    }
 }

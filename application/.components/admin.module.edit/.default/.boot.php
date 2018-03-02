@@ -28,7 +28,7 @@ if($arParam['type'] == 'category_add' OR $arParam['type'] == 'category_edit'){
 }
 
 
-// Создаем подя (Ошибки)
+// Создаем поля (Ошибки)
 $arInputIsset = ['name','type','description'];
 foreach ($arParam['module']['field'] as $name => $array) {
     foreach ($arInputIsset as $inputIsset) {

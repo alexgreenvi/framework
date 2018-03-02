@@ -12,7 +12,6 @@ class App extends CI_Model {
         if(!empty($component)) $url .= $component.'/';
         if(!empty($name)) $url_name = $name.'/'; else $url_name = '.default/';
 
-
         // prolog
         if(file_exists($url.$url_name.'.prolog.php')){
             include ($url.$url_name.'.prolog.php');
@@ -80,5 +79,32 @@ class App extends CI_Model {
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/header.php'); // Header
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/module/module.php'); // module
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/footer.php'); // Footer
+    }
+
+    // USER
+    function user_login($email,$password) {
+        $arUser = $this->db->query("SELECT * FROM user WHERE email='".$email."' AND password = '".$password."'")->row_array();
+        $data = array();
+        foreach ($arUser as $key => $value){
+            $data['user'][$key] = $value;
+        }
+        $this->session->set_userdata($data);
+    }
+    function user_check(){
+        if($this->session->userdata('user'))
+            return true;
+        else
+            return false;
+    }
+    function user_get($data = null){
+        if(!empty($data)){
+            return $this->session->userdata('user',$data);
+        }else{
+            return $this->session->userdata('user');
+        }
+
+    }
+    function user_exit() {
+        $this->session->unset_userdata('user');
     }
 }

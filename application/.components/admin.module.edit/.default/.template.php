@@ -7,7 +7,7 @@
  *
  */
 ?>
-<form action="handler.php" method="post" enctype="multipart/form-data">
+<form action="" method="post" enctype="multipart/form-data">
 <div class="admin__edit">
     <input name="id" type="hidden" value="<?=$arParam['post']['id'];?>">
     <input name="module_id" type="hidden" value="<?=$arParam['post']['ajaxFormModuleId']?>">

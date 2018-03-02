@@ -107,6 +107,13 @@
 		"oAP": "\/application\/.admin\/module\/news\/.config.php",
 		"oF": 0
 		},
+	"\/application\/.admin\/user\/login.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/user\/login.php",
+		"oF": 0
+		},
 	"\/application\/.components\/admin.module.edit\/.default\/.boot.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -169,6 +176,34 @@
 		"oA": 1,
 		"oAP": "\/application\/.components\/list\/admin.module\/.template.php",
 		"oF": 1
+		},
+	"\/application\/.components\/user.login\/.default\/.boot.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/user.login\/.default\/.boot.php",
+		"oF": 0
+		},
+	"\/application\/.components\/user.login\/.default\/.epilog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/user.login\/.default\/.epilog.php",
+		"oF": 0
+		},
+	"\/application\/.components\/user.login\/.default\/.prolog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/user.login\/.default\/.prolog.php",
+		"oF": 0
+		},
+	"\/application\/.components\/user.login\/.default\/.template.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/user.login\/.default\/.template.php",
+		"oF": 0
 		},
 	"\/application\/.htaccess": {
 		"cB": 0,

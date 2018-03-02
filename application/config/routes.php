@@ -62,6 +62,12 @@ $route['admin/news/add']                  = 'admin/module_add/';
 $route['admin/news/edit/(:any)']          = 'admin/module_edit/$1';
 $route['admin/news']                      = 'admin/module/';
 
+// Пользователь
+$route['admin/user/']                     = 'admin/user/';
+$route['admin/user/login/']               = 'admin/user_login/';
+$route['admin/user/exit']                 = 'admin/user_exit/';
+$route['admin/user/registration/']        = 'admin/user_registration/';
+
 //$route['admin/(:any)/(:any)'] = 'admin/module_edit/$1';
 //$route['admin/(:any)/'] = 'admin/module/';
 //

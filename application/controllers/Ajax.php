@@ -21,4 +21,9 @@ class Ajax extends CI_Controller {
             ]);
         }
     }
+    public function user($CODE){
+        $this->app->component('user.'.$CODE , '', '', [
+            'post' => $_POST, // Все данный POST
+        ]);
+    }
 }

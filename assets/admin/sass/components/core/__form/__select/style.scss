@@ -45,16 +45,6 @@
       color: #868e96;
       opacity: 1
     }
-    // Цвет
-    @each $name, $color in $status {
-      $class: '_';
-      @if($name == '') {
-        $class: '';
-      }
-      &#{$class}#{$name}:focus{
-        border-color: #{nth($color,2)};
-      }
-    }
   }
   &__log {
     position: absolute;

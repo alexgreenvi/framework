@@ -79,8 +79,7 @@ foreach ($fields as $field) {
 // * Создаем все поля
 $error = false;
 foreach ($arParam['module']['field'] as $name => $array) {
-    $arParam['module']['field'][$name]['error'] = check_field($name, $arParam['post'][$name]);
-
+    $arParam['module']['field'][$name]['error'] = check_field($name, $arParam['post'][$name], $ajaxFormButton);
     // Если хоть одно поле есть с ошибкой
     if (!empty($arParam['module']['field'][$name]['error']['text'])) {
         $error = true;
@@ -147,6 +146,10 @@ $config['max_size'] = '10000';
 if(!empty($arParam['files']) AND !empty($id)) {
     foreach ($arParam['files'] as $key => $arItem){
         // Превью картинка
+        if(file_exists($_SERVER['DOCUMENT_ROOT'].$arParam['old'][$key])){
+            unlink($_SERVER['DOCUMENT_ROOT'].$arParam['old'][$key]);
+        }
+
         $config['upload_path'] = './uploads/'.$arParam['post']['ajaxFormModuleCode'].'/';
         $config['file_name'] = $id.'-'.$key;
         $this->load->library('upload', $config);

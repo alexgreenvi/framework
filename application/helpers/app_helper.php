@@ -9,30 +9,27 @@
     }
 
 
-    function check_field($name = null , $value = null){
+    function check_field($name = null , $value = null , $button = false){
+        $warning = 'core__form__input_warning';
+        $danger  = 'core__form__input_danger';
         $arResult = [
             'type' => '',
             'text' => ''
         ];
+        if($button != 'push') return $arResult;
         if($name == 'name') {
             if(empty($value)){
-                $arResult['type'] = 'core__form__input_warning';
+                $arResult['type'] = $warning;
                 $arResult['text'] = 'Вы не заполние поле';
             }
         }
         if($name == 'code') {
-            if(empty($value)){
-                $arResult['type'] = 'core__form__input_warning';
-                $arResult['text'] = 'Вы не заполние поле';
-            }
             if(!preg_match("/^[A-Z_a-z0-9]+$/",$value)){
-                $arResult['type'] = 'core__form__input_warning';
+                $arResult['type'] = $warning;
                 $arResult['text'] = 'Вы ввели неправильные символы';
             }
-        }
-        if($name == 'description') {
             if(empty($value)){
-                $arResult['type'] = 'core__form__input_warning';
+                $arResult['type'] = $warning;
                 $arResult['text'] = 'Вы не заполние поле';
             }
         }

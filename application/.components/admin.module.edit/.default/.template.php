@@ -11,25 +11,23 @@
 <div class="admin__edit">
     <input name="id" type="hidden" value="<?=$arParam['post']['id'];?>">
     <input name="module_id" type="hidden" value="<?=$arParam['post']['ajaxFormModuleId']?>">
-    <?foreach ($arParam['module']['field'] as $name => $inf):?>
-        <?
-        // * code - Уникальный код, для обращения
-        ?>
-        <?if($name === 'code'):?>
-            <div class="admin__edit__row">
-                <div class="admin__edit__name">
-                    <span><?=$inf['name']?></span>
-                </div>
-                <div class="admin__edit__input">
-                    <div class="core__form__input <?=$inf['error']['type']?>">
-                        <input name="<?=$name?>" class="core__form__input__control" value="<?=$arParam['post'][$name];?>">
-                        <?if(!empty($inf['error']['text'])):?>
-                            <div class="core__form__input__log"><?=$inf['error']['text']?></div>
-                        <?endif;?>
+    <div class="admin__edit__row">
+        <div class="admin__edit__name">
+            <span><?=$arParam['module']['field']['code']['name']?></span>
+        </div>
+        <div class="admin__edit__input">
+            <div class="core__form__input">
+                <input name="code" class="core__form__input__control" value="<?=$arParam['post']['code'];?>">
+                <?if(!empty($arParam['module']['field']['code']['error']['text'])):?>
+                    <div class="core__form__input__log"><?=$arParam['module']['field']['code']['error']['text']?></div>
+                    <div class="core__form__input__log__icon">
+                        <i class="core__icon core__icon_channel-info"></i>
                     </div>
-                </div>
+                <?endif;?>
             </div>
-        <?endif;?>
+        </div>
+    </div>
+    <?foreach ($arParam['module']['field'] as $name => $inf):?>
         <?
         // * cat - Категория
         ?>
@@ -70,10 +68,13 @@
                     <span><?=$inf['name']?></span>
                 </div>
                 <div class="admin__edit__input">
-                    <div class="core__form__input <?=$inf['error']['type']?>">
+                    <div class="core__form__input core__form__input_big">
                         <input name="<?=$name?>" class="core__form__input__control" value="<?=$arParam['post'][$name]?>">
                         <?if(!empty($inf['error']['text'])):?>
                             <div class="core__form__input__log"><?=$inf['error']['text']?></div>
+                            <div class="core__form__input__log__icon">
+                                <i class="core__icon core__icon_channel-info"></i>
+                            </div>
                         <?endif;?>
                     </div>
                 </div>
@@ -102,8 +103,17 @@
             <div class="admin__edit__row admin__edit__row_img">
                 <div class="admin__edit__row__left">
                     <div class="core__form__file">
-                        <label style="background-image: url('<?=$arParam['post'][$name]?>');">
-                            <?if(!empty($arParam['old'][$name]) AND !file_exists($_SERVER['DOCUMENT_ROOT'].$arParam['post'][$name])):?>
+                        <?
+                            if(!empty($arParam['old'][$name]) AND !file_exists($_SERVER['DOCUMENT_ROOT'].$arParam['post'][$name])){
+                                $file_url = '';
+                                $file_status = 'load';
+                            }else{
+                                $file_url = $arParam['old'][$name];
+                                $file_status = '';
+                            }
+                        ?>
+                        <label style="background-image: url('<?=$file_url?>');">
+                            <?if($file_status == 'load'):?>
                                 <i class="core__form__file__icon core__icon core__icon_your-files"></i>
                                 <span class="core__form__file__text">Идет загрузка файла</span>
                             <?else:?>
@@ -131,9 +141,9 @@
         // Дополнительные поля
         // * img_preview - Название
         ?>
-        <div class="admin__edit__row admin__edit__row_img">
-            <?for ($i = 1; $i < 10; $i++){?>
-                <?if($name === 'addition_img_'.$i):?>
+        <?for ($i = 1; $i < 10; $i++){?>
+            <?if($name === 'addition_img_'.$i):?>
+                <div class="admin__edit__row admin__edit__row_img">
                     <div class="col-6">
                         <div class="core__form__file">
                             <label style="background-image: url('<?=$arParam['post'][$name]?>');">
@@ -143,9 +153,9 @@
                             </label>
                         </div>
                     </div>
-                <?endif;?>
-            <?}?>
-        </div>
+                </div>
+            <?endif;?>
+        <?}?>
     <?endforeach;?>
         <a href="<?=$arParam['link']?>" title="" class="core__btn core__btn_default"><span>Отменить</span></a>
     <?if($arParam['type'] == 'edit' OR $arParam['type'] == 'category_edit'):?>

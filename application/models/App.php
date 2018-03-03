@@ -90,15 +90,24 @@ class App extends CI_Model {
         }
         $this->session->set_userdata($data);
     }
-    function user_check(){
-        if($this->session->userdata('user'))
-            return true;
-        else
+    function user_check($group = null){
+        if ($this->session->userdata('user')){
+            if($group = 'admin') {
+                if($this->session->userdata['user']['group_id'] == 5){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return true;
+            }
+        } else {
             return false;
+        }
     }
     function user_get($data = null){
         if(!empty($data)){
-            return $this->session->userdata('user',$data);
+            return $this->session->userdata['user'][$data];
         }else{
             return $this->session->userdata('user');
         }

@@ -81,4 +81,21 @@
       font-weight: 400;
     }
   }
+  &__user{
+    &__login {
+      background: #ffffff;
+      height: 100vh;
+      text-align: center;
+      padding: 20% 0;
+
+      &__wrap {
+        max-width: 400px;
+        margin: auto;
+      }
+      & .form {
+        width: 250px;
+        margin: auto;
+      }
+    }
+  }
 }

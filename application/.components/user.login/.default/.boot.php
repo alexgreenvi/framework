@@ -3,7 +3,7 @@
  *
  * @arParam массив праметров компонента
  */
-$log = '';
+$login = false;
 $error = false;
 $error_text = '';
 
@@ -21,9 +21,9 @@ if(!empty($arParam['post']['email']) AND !empty($arParam['post']['password'])) {
 
     if($this->db->query("SELECT * FROM user WHERE email='".$email."' AND password = '".$password."'")->row_array()) {
         $this->app->user_login($email,$password);
-        $log = 'Вы вошли';
+        $login = true;
     }else{
-        $log = 'Ошибка авторизации';
+        $error_text = 'Ошибка авторизации';
     }
 }
 

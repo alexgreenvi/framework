@@ -5,6 +5,11 @@ class Admin extends CI_Controller {
     {
         parent::__construct();
         //  Делаем в самом начале
+        $segment = $this->uri->segment(3);
+
+        if($segment !== 'login' AND $segment !== 'registration' AND !$this->app->user_check('admin')){
+            redirect(base_url().'admin/user/login', 'refresh');
+        }
     }
     // Главная страница Админки
     public function index() {
@@ -110,11 +115,15 @@ class Admin extends CI_Controller {
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/footer.php'); // Footer
     }
     public function user_login() {
+        if($this->app->user_check('admin')){
+            redirect(base_url().'admin/', 'refresh');
+        }
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/header.php'); // Header
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/user/login.php');
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/footer.php'); // Footer
     }
     public function user_exit(){
-
+        $this->app->user_exit();
+        redirect(base_url(), 'refresh');
     }
 }

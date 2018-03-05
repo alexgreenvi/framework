@@ -1,5 +1,5 @@
 .admin {
-  &__title {  }
+  &__title {}
   &__top {
     position: relative;
     margin-bottom: 50px;
@@ -95,6 +95,144 @@
       & .form {
         width: 250px;
         margin: auto;
+      }
+    }
+  }
+}
+
+.sh-{
+  // sh-form
+  &form {
+    &__field {
+      position: relative;
+      width: 100%;
+      margin-bottom: 18px;
+      &__row {
+        @extend .row;
+        @extend .row-table;
+        &__left,
+        &__right {
+          @extend .col;
+          vertical-align: top;
+        }
+        &__right {
+          width: 100%!important;
+        }
+      }
+      &__name {
+        margin: 6px 0 3px;
+        font-weight: bold;
+        font-size: 15px;
+      }
+    }
+  }
+  // sh-input
+  &input {
+    position: relative;
+    &__control {
+      display: block;
+      width: 100%;
+      height: 36px;
+      background-clip: padding-box;
+      outline: none;
+
+      background: #fff;
+      padding: 18px 18px;
+      font-size: 14px;
+      color: #2c2e32;
+      border: 2px solid #e0e2e6;
+      border-radius: 10px;
+      @include border-radius(5px);
+      @include transition(0.3,ease-in-out);
+
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+    &__log {
+      position: absolute;
+      bottom: -13px;
+      left: 15px;
+      background: #fafafc;
+      margin-bottom: 5px;
+      padding: 0 5px;
+      line-height: 15px;
+      clear: both;
+      float: left;
+      color: #ff4b4b;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    &__icon {
+      position: absolute;
+      top: 9px;
+      right: 10px;
+      font-size: 20px;
+      color: #ff4b4b;
+    }
+    // Свойства
+    &_code {
+      & .sh-input__control {
+        border: 0;
+        border-radius: 0;
+        font-weight: bold;
+        color: #a10cbe;
+      }
+    }
+    &_field {
+      margin-bottom: 7px;
+      & .sh-input__control {
+        border: 0;
+        border-radius: 0;
+        font-weight: bold;
+      }
+    }
+  }
+  // sh-text
+  &textarea{
+    @extend .sh-input;
+    &__control {
+      @extend .sh-input__control;
+      height: 100px;
+    }
+  }
+  // sh-checkbox
+  &checkbox {
+    position:relative;
+    &__name {
+      float:right;
+    }
+    &__control {
+      display: none;
+      &[type=checkbox]:checked + label{
+        background:#22c380;
+      }
+      &[type=checkbox]:checked + label:before{
+        left:20px;
+        background: #ffffff;
+      }
+    }
+    &__label {
+      width:40px;
+      height:24px;
+      box-sizing:border-box;
+      float:left;
+      border-radius:100px;
+      position:relative;
+      cursor:pointer;
+      transition:.3s ease;
+      background-color: #e0e2e6;
+      &:before{
+        transition:.3s ease;
+        content:'';
+        left: 3px;
+        top: 4px;
+        width: 16px;
+        height: 16px;
+        position:absolute;
+        background: #a4a6aa;
+        box-sizing:border-box;
+        color:black;
+        border-radius:100px;
       }
     }
   }

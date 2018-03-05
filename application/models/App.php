@@ -68,7 +68,17 @@ class App extends CI_Model {
         // Выбираем нужный модуль
         $arModule = $this->db->query("SELECT * FROM module WHERE code = '".$arModule['code']."'")->row_array();
         // Загружаем все параметры
-        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/module/'.$arModule['code'].'/.config.php'); // config
+
+
+        if(file_exists($_SERVER['DOCUMENT_ROOT'].'/local/.modules/'.$arModule['code'].'/.config.php')){
+            // Локальный
+            include ($_SERVER['DOCUMENT_ROOT'].'/local/.modules/'.$arModule['code'].'/.config.php');
+        }
+        elseif (file_exists($_SERVER['DOCUMENT_ROOT'].'/application/.admin/module/'.$arModule['code'].'/.config.php')){
+            // Стандартный
+            include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/module/'.$arModule['code'].'/.config.php');
+        };
+
         return $arModule;
     }
     function get_admin_module_page($arParam){
@@ -79,6 +89,119 @@ class App extends CI_Model {
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/header.php'); // Header
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/module/module.php'); // module
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/footer.php'); // Footer
+    }
+    // config
+    function config_get(){}
+    function config_save($module = false, $array){
+    }
+    function module_get_field() {
+        // Получаем все поля
+        $arParam = $this->db->list_fields('module_element');
+        foreach ($arParam as $key => $name) {
+            $arParam[$name]['status'] = '';
+
+            switch ($name) {
+                case 'module_category_id':
+                    $arParam[$name]['name'] = 'Категория';
+                    break;
+                case 'code':
+                    $arParam[$name]['name'] = 'Код';
+                    break;
+                case 'name':
+                    $arParam[$name]['name'] = 'Название';
+                    break;
+                case 'img_preview':
+                    $arParam[$name]['name'] = 'Превью картинка';
+                    break;
+                case 'description_preview':
+                    $arParam[$name]['name'] = 'Превью описание';
+                    break;
+                case 'img_detail':
+                    $arParam[$name]['name'] = 'Детальная картинка';
+                    break;
+                case 'description':
+                    $arParam[$name]['name'] = 'Детальное описание';
+                    break;
+                case 'date':
+                    $arParam[$name]['name'] = 'Дата';
+                    break;
+                case 'user_id':
+                    $arParam[$name]['name'] = 'Пользователь';
+                    break;
+                // Дополнительные поля
+                case 'addition_1':
+                    $arParam[$name]['name'] = 'Дополнительное поле 1';
+                    break;
+                case 'addition_2':
+                    $arParam[$name]['name'] = 'Дополнительное поле 2';
+                    break;
+                case 'addition_3':
+                    $arParam[$name]['name'] = 'Дополнительное поле 3';
+                    break;
+                case 'addition_4':
+                    $arParam[$name]['name'] = 'Дополнительное поле 4';
+                    break;
+                case 'addition_5':
+                    $arParam[$name]['name'] = 'Дополнительное поле 5';
+                    break;
+                case 'addition_6':
+                    $arParam[$name]['name'] = 'Дополнительное поле 6';
+                    break;
+                case 'addition_7':
+                    $arParam[$name]['name'] = 'Дополнительное поле 7';
+                    break;
+                case 'addition_8':
+                    $arParam[$name]['name'] = 'Дополнительное поле 8';
+                    break;
+                case 'addition_9':
+                    $arParam[$name]['name'] = 'Дополнительное поле 9';
+                    break;
+                case 'addition_10':
+                    $arParam[$name]['name'] = 'Дополнительное поле 10';
+                    break;
+                case 'addition_img_1':
+                    $arParam[$name]['name'] = 'Дополнительная картинка 1';
+                    break;
+                case 'addition_img_2':
+                    $arParam[$name]['name'] = 'Дополнительная картинка 2';
+                    break;
+                case 'addition_img_3':
+                    $arParam[$name]['name'] = 'Дополнительная картинка 3';
+                    break;
+                case 'addition_img_4':
+                    $arParam[$name]['name'] = 'Дополнительная картинка 4';
+                    break;
+                case 'addition_img_5':
+                    $arParam[$name]['name'] = 'Дополнительная картинка 5';
+                    break;
+                case 'addition_img_6':
+                    $arParam[$name]['name'] = 'Дополнительная картинка 6';
+                    break;
+                case 'addition_img_7':
+                    $arParam[$name]['name'] = 'Дополнительная картинка 7';
+                    break;
+                case 'addition_img_8':
+                    $arParam[$name]['name'] = 'Дополнительная картинка 8';
+                    break;
+                case 'addition_img_9':
+                    $arParam[$name]['name'] = 'Дополнительная картинка 9';
+                    break;
+                case 'addition_img_10':
+                    $arParam[$name]['name'] = 'Дополнительная картинка 10';
+                    break;
+                default;
+                    $arParam[$name]['name'] = '???';
+                break;
+            }
+
+            $arParam[$name]['description'] = '';
+            unset($arParam[$key]);
+
+            unset($arParam['id']);
+            unset($arParam['module_id']);
+
+        }
+        return $arParam;
     }
 
     // USER

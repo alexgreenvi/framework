@@ -61,6 +61,17 @@ class Admin extends CI_Controller {
         $this->db->delete('module_element',['id' => $ID,'module_id' => $arModule['id']]);
         redirect(base_url().'admin/'.$arModule['code'].'/', 'refresh');
     }
+    public function module_config () {
+        $module_code = $this->uri->segment(2);
+        $arModule = $this->app->get_module_config($module_code);
+        $this->app->get_admin_module_page([
+            'module' => $arModule,
+            'page' => [
+                'name' => 'config',
+                'detail' => false,
+            ]
+        ]);
+    }
 
     public function module_category () {
         $module_code = $this->uri->segment(2);

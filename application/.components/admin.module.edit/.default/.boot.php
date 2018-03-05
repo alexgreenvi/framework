@@ -5,19 +5,11 @@
  * @arResult массив результата
  * @arItem массив отдельного элемента
  */
-// Проверяем для в какую базу мы домавляем
-// И меням поля ввода
+// * Проверяем для в какую базу мы домавляем
+// * И меням поля ввода
 if($arParam['type'] == 'category_add' OR $arParam['type'] == 'category_edit'){
     $table = 'module_category';
     $arParam['module']['field'] = [
-        'name' => [
-            'name' => 'Название',
-            'description' => ''
-        ],
-        'code' => [
-            'name' => 'Человекопонятный URL (ЧПУ)',
-            'description' => ''
-        ],
         'description' => [
             'name' => 'Описание',
             'description' => ''
@@ -28,13 +20,13 @@ if($arParam['type'] == 'category_add' OR $arParam['type'] == 'category_edit'){
 }
 
 
+// * Выбираем все поля
+$arField = $this->app->module_get_field();
+
 // Создаем поля (Ошибки)
-$arInputIsset = ['name','type','description'];
-foreach ($arParam['module']['field'] as $name => $array) {
-    foreach ($arInputIsset as $inputIsset) {
-        if(!isset($arParam['module']['field'][$name][$inputIsset])){
-            $arParam['module']['field'][$name][$inputIsset] = '';
-        }
+foreach ($arField as $name => $array) {
+    if(empty($arParam['module']['field'][$name]['name'])){
+        $arParam['module']['field'][$name]['name'] = $array['name'];
     }
     $arParam['module']['field'][$name]['error'] = '';
 }
@@ -159,3 +151,6 @@ if(!empty($arParam['files']) AND !empty($id)) {
         $this->db->where('id',$arBase['id'])->update($table,$arBase);
     }
 }
+
+
+drop($arParam);

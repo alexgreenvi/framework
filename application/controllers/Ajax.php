@@ -20,6 +20,14 @@ class Ajax extends CI_Controller {
                 'type' => $type
             ]);
         }
+        if($type == 'config'){
+            $arModule = $this->app->get_module_config($_POST['ajaxFormModuleCode']);
+            $this->app->component('admin.module.config', '', '', [
+                'post' => $_POST, // Все данный POST
+                'module' => $arModule,
+                'type' => $type
+            ]);
+        }
     }
     public function user($CODE){
         $this->app->component('user.'.$CODE , '', '', [

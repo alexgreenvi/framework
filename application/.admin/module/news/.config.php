@@ -1,16 +1,8 @@
 <?
     $arModule['count'] = $this->db->count_all('module'); // Количество материалов в модуле
     $arModule['field'] = [
-        'id' => [
-            'name' => '',
-            'type' => 'hidden'
-        ],
         'name' => [
             'name' => 'Название',
-            'description' => ''
-        ],
-        'code' => [
-            'name' => 'Человекопонятный URL (ЧПУ)',
             'description' => ''
         ],
         'module_category_id' => [

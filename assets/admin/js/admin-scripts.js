@@ -84,12 +84,6 @@ var AjaxForm = {
         });
         // Присоединяем все файлы
         if($this.find('[type=file]').is('input')){ // Если нашки хоть один
-
-            // $.each($('[type=file]')[0].files, function(i, file) {
-            //     console.log($(this));
-            //     formData.append('file_v', file);
-            // });
-
             $.each($('[type=file]'), function(key, file) {
                 formData.append($(file).attr('name'), $(file)[0].files[0]);
             });
@@ -97,8 +91,12 @@ var AjaxForm = {
         // Перебираем все поля
         $this.find('input, textarea, select').each(function() {
             formData.append(this.name, $(this).val());
+
             if($($this).is('[type=file]')) {
                 formData.append(this.name, $(this).attr('value'));
+            }
+            if($(this).is('[type=checkbox]')){
+                formData.append(this.name, $(this).is(':checked'));
             }
         });
 

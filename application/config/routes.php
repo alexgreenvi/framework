@@ -60,6 +60,7 @@ $route['admin/news/categories']                = 'admin/module_category/';
 $route['admin/news/delete/(:any)']        = 'admin/module_delete/$1';
 $route['admin/news/add']                  = 'admin/module_add/';
 $route['admin/news/edit/(:any)']          = 'admin/module_edit/$1';
+$route['admin/news/config']               = 'admin/module_config/';
 $route['admin/news']                      = 'admin/module/';
 
 // Пользователь

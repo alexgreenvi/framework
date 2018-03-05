@@ -9,6 +9,13 @@
 	],
 "creatorBuild": "26330",
 "files": {
+	"\/.config.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/.config.php",
+		"oF": 0
+		},
 	"\/.htaccess": {
 		"cB": 0,
 		"ft": 8192,
@@ -79,6 +86,13 @@
 		"oAP": "\/application\/.admin\/module\/.template\/category_edit.php",
 		"oF": 0
 		},
+	"\/application\/.admin\/module\/.template\/config.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/module\/.template\/config.php",
+		"oF": 0
+		},
 	"\/application\/.admin\/module\/.template\/edit.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -112,6 +126,34 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/application\/.admin\/user\/login.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module.config\/.default\/.boot.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module.config\/.default\/.boot.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module.config\/.default\/.epilog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module.config\/.default\/.epilog.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module.config\/.default\/.prolog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module.config\/.default\/.prolog.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module.config\/.default\/.template.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module.config\/.default\/.template.php",
 		"oF": 0
 		},
 	"\/application\/.components\/admin.module.edit\/.default\/.boot.php": {
@@ -3172,6 +3214,13 @@
 		"oA": 1,
 		"oAP": "\/index.php",
 		"oF": 1
+		},
+	"\/local\/.modules\/news\/.config.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/local\/.modules\/news\/.config.php",
+		"oF": 0
 		},
 	"\/README.md": {
 		"cB": 0,

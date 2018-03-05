@@ -47,7 +47,7 @@ foreach ($arField as $name => $array) {
         }
 
         // * Проверяем name
-        if (isset($arParam['post']['field-' . $name]) AND !empty($arParam['post']['field-' . $name])) {
+        if (isset($arParam['post']['field-' . $name])) {
             $arParam['module']['field'][$name]['name'] = get_clean($arParam['post']['field-' . $name]);
         }
     }

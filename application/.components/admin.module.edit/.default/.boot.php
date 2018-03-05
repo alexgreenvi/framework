@@ -9,27 +9,39 @@
 // * И меням поля ввода
 if($arParam['type'] == 'category_add' OR $arParam['type'] == 'category_edit'){
     $table = 'module_category';
+    unset($arParam['module']['field']);
     $arParam['module']['field'] = [
+        'name' => [
+            'status' => 'true',
+            'name' => 'Название',
+            'description' => ''
+        ],
+        'code' => [
+            'status' => 'true',
+            'name' => 'Код',
+            'description' => ''
+        ],
         'description' => [
+            'status' => 'true',
             'name' => 'Описание',
             'description' => ''
         ],
     ];
 }else {
     $table = 'module_element';
-}
 
+    // * Выбираем все поля
+    $arField = $this->app->module_get_field();
 
-// * Выбираем все поля
-$arField = $this->app->module_get_field();
-
-// Создаем поля (Ошибки)
-foreach ($arField as $name => $array) {
-    if(empty($arParam['module']['field'][$name]['name'])){
-        $arParam['module']['field'][$name]['name'] = $array['name'];
+    // Создаем поля (Ошибки)
+    foreach ($arField as $name => $array) {
+        if(empty($arParam['module']['field'][$name]['name'])){
+            $arParam['module']['field'][$name]['name'] = $array['name'];
+        }
+        $arParam['module']['field'][$name]['error'] = '';
     }
-    $arParam['module']['field'][$name]['error'] = '';
 }
+
 
 // Выбираем все поля из тамблицы
 $fields = $this->db->list_fields($table);
@@ -151,6 +163,3 @@ if(!empty($arParam['files']) AND !empty($id)) {
         $this->db->where('id',$arBase['id'])->update($table,$arBase);
     }
 }
-
-
-drop($arParam);

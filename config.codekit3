@@ -4607,14 +4607,15 @@
 		"opt": 0,
 		"q": 100
 		},
-	"\/uploads\/news\/67-img_preview.jpg": {
-		"ft": 16384,
-		"iS": 2705079,
+	"\/uploads\/news\/67-img_preview.png": {
+		"ft": 32768,
+		"iS": 437256,
 		"oA": 0,
-		"oAP": "\/uploads\/news\/67-img_preview.jpg",
+		"oAP": "\/uploads\/news\/67-img_preview.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/uploads\/news\/69-img_preview.jpg": {

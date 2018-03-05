@@ -43,7 +43,6 @@
             </div>
         </div>
     </div>
-
     <?foreach ($arParam['module']['field'] as $name => $inf):?>
         <?if($inf['status'] == 'true'){?>
             <?if($name === 'module_category_id'):?>

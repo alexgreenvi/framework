@@ -117,12 +117,12 @@ if($this->uri->segment(3) == 'category_edit' OR $this->uri->segment(3) == 'categ
 }else{
     $arParam['link'] = '/admin/'.$arParam['post']['ajaxFormModuleCode'].'/';
 }
+
 // Удаляем поля с картинками
 unset($arBase['img_preview']);
 unset($arBase['img_detail']);
-for ($i = 1; $i < 10; $i++){
+for ($i = 1; $i <= 10; $i++){
     unset($arBase['addition_img_'.$i]);
-    unset($arBase['addition_'.$i]);
 }
 
 // Обновляем данные

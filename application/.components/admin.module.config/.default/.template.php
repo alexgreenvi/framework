@@ -8,7 +8,7 @@
  */
 ?>
 <form action="" method="post" enctype="multipart/form-data">
-<div class="admin__edit">
+<div class="sh-admin__form">
     <input name="id" type="hidden" value="<?=$arParam['module']['id'];?>">
     <div class="sh-form__field">
         <div class="sh-form__field__name">
@@ -26,26 +26,24 @@
             <?endif;?>
         </div>
     </div>
-    <div class="sh-form">
-        <div class="sh-form__field">
-            <div class="sh-form__field__row">
-                <div class="sh-form__field__row__left">
-                    <div class="sh-form__field__name">
-                        <span>Код</span>
-                    </div>
+    <div class="sh-form__field">
+        <div class="sh-form__field__row">
+            <div class="sh-form__field__row__left">
+                <div class="sh-form__field__name">
+                    <span>Код</span>
                 </div>
-                <div class="sh-form__field__row__right">
-                    <div class="sh-input sh-input_code">
-                        <input name="code" class="sh-input__control" value="<?=$arParam['module']['code'];?>">
-                        <?if(!empty($arParam['code_error']['text'])):?>
-                            <div class="sh-input__log">
-                                <?=$arParam['code_error']['text']?>
-                            </div>
-                            <div class="sh-input__icon">
-                                <i class="core__icon core__icon_channel-info"></i>
-                            </div>
-                        <?endif;?>
-                    </div>
+            </div>
+            <div class="sh-form__field__row__right">
+                <div class="sh-input sh-input_code">
+                    <input name="code" class="sh-input__control" value="<?=$arParam['module']['code'];?>">
+                    <?if(!empty($arParam['code_error']['text'])):?>
+                        <div class="sh-input__log">
+                            <?=$arParam['code_error']['text']?>
+                        </div>
+                        <div class="sh-input__icon">
+                            <i class="core__icon core__icon_channel-info"></i>
+                        </div>
+                    <?endif;?>
                 </div>
             </div>
         </div>
@@ -55,9 +53,7 @@
             <span>Описание</span>
         </div>
         <div class="sh-textarea">
-            <textarea name="description" class="sh-textarea__control">
-                <?=$arParam['module']['description'];?>
-            </textarea>
+            <textarea name="description" class="sh-textarea__control"><?=$arParam['module']['description'];?></textarea>
         </div>
     </div>
     <div class="sh-form">

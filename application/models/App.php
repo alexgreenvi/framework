@@ -199,6 +199,7 @@ class App extends CI_Model {
 
             unset($arParam['id']);
             unset($arParam['module_id']);
+            unset($arParam['code']);
 
         }
         return $arParam;

@@ -101,6 +101,14 @@
 }
 
 .sh-{
+  &admin {
+    &__form {
+      padding: 0 8.7% 50px;
+    }
+  }
+
+
+  // ************
   // sh-form
   &form {
     &__field {
@@ -118,17 +126,44 @@
         &__right {
           width: 100%!important;
         }
+
+        &__img {
+          @extend .col-6;
+        }
+        &_addition{
+          & .sh-form__field__row__left {
+            width: 50%;
+          }
+        }
       }
       &__name {
         margin: 6px 0 3px;
         font-weight: bold;
         font-size: 15px;
       }
+      &__description {
+        margin-top: 5px;
+        color: #686a6e;
+        font-size: 13px;
+        line-height: 1.3em;
+        margin-bottom: 12px;
+        font-weight: 400;
+      }
     }
   }
   // sh-input
   &input {
     position: relative;
+    &_big {
+      .sh-input__control {
+        height: 46px;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .sh-input__icon {
+        top: 12px;
+      }
+    }
     &__control {
       display: block;
       width: 100%;
@@ -187,6 +222,26 @@
       }
     }
   }
+  &select {
+    @extend .sh-input;
+    &__control {
+      @extend .sh-input__control;
+      margin: 0;
+      padding: 6px 42px 6px 14px;
+      position: relative;
+      z-index: 1;
+      font-size: 14px;
+
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      appearance: none !important;
+      background: #fff url('/assets/admin/img/core/icon/core__select.png') no-repeat;
+      background-position: 100%;
+      cursor: pointer;
+      display: inline-block;
+    }
+  }
   // sh-text
   &textarea{
     @extend .sh-input;
@@ -234,6 +289,51 @@
         color:black;
         border-radius:100px;
       }
+    }
+  }
+  // file
+  &file {
+    @include border-radius(9px);
+    color: #a4a6aa;
+    &:hover {
+      background: #fff;
+    }
+    & input[type="file"] {
+      display: none; /* Обязательно скрываем настоящий Input File */
+    }
+    & label {
+      display: block;
+      @include border-radius(9px);
+      border: 2px dashed #e0e2e6;
+      padding: 16px 16px 4px;
+      text-align: center;
+      cursor: pointer;
+      background-size: cover;
+      background-position: center;
+      @include transition('','');
+      &:hover {
+        background-size: 0%;
+      }
+    }
+    & span {
+      line-height: 18px; /* Делаем вертикальное выравнивание текста, который написан на кнопке */
+    }
+
+    &__icon {
+      display: block;
+      font-size: 40px;
+      margin: 10px 0 20px;
+    }
+    &__text {
+      color: #686a6e;
+      font-size: .9em;
+      line-height: 1.2em;
+    }
+  }
+
+  &color {
+    &_info {
+      color: $color-info;
     }
   }
 }

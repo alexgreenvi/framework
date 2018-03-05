@@ -86,8 +86,6 @@
         </div>
     </div>
 
-
-
         <a href="/admin/<?=$arParam['module']['code']?>/" title="" class="core__btn core__btn_default"><span>Отменить</span></a>
     <?if($arParam['type'] == 'edit' OR $arParam['type'] == 'category_edit'):?>
         <a href="<?=$arParam['module']['code']?>delete/<?=$arParam['module']['ajaxFormModuleElementId']?>" title="" class="core__btn core__btn_danger"><span>Удалить</span></a>

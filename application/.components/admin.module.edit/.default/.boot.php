@@ -154,12 +154,12 @@ if(!empty($arParam['files']) AND !empty($id)) {
             unlink($_SERVER['DOCUMENT_ROOT'].$arParam['old'][$key]);
         }
 
-        $config['upload_path'] = './uploads/'.$arParam['post']['ajaxFormModuleCode'].'/';
+        $config['upload_path'] = './local/uploads/'.$arParam['post']['ajaxFormModuleCode'].'/';
         $config['file_name'] = $id.'-'.$key;
         $this->load->library('upload', $config);
         $this->upload->do_upload($key);
         // Обновляем данные
-        $arBase[$key] = '/uploads/'.$arParam['post']['ajaxFormModuleCode'].'/'.$this->upload->data('file_name');;
+        $arBase[$key] = 'local/uploads/'.$arParam['post']['ajaxFormModuleCode'].'/'.$this->upload->data('file_name');;
         $this->db->where('id',$arBase['id'])->update($table,$arBase);
     }
 }

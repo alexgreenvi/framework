@@ -40,7 +40,7 @@
         </aside>
         <div class="container-main">
             <div class="admin">
-                <?include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/module/.template/'.$arParam['page']['name'].'.php');?>
+                <?include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.modules/.template/'.$arParam['page']['name'].'.php');?>
             </div>
         </div>
     </div>

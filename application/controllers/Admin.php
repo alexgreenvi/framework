@@ -13,9 +13,9 @@ class Admin extends CI_Controller {
     }
     // Главная страница Админки
     public function index() {
-        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/header.php'); // Header
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.templates/header.php'); // Header
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/index.php');
-        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/footer.php'); // Footer
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.templates/footer.php'); // Footer
     }
     // Модули
     public function module() {
@@ -121,17 +121,17 @@ class Admin extends CI_Controller {
 
     // Пользователи
     public function user() {
-        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/header.php'); // Header
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.templates/header.php'); // Header
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/user/login.php');
-        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/footer.php'); // Footer
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.templates/footer.php'); // Footer
     }
     public function user_login() {
         if($this->app->user_check('admin')){
             redirect(base_url().'admin/', 'refresh');
         }
-        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/header.php'); // Header
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.templates/header.php'); // Header
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/user/login.php');
-        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/footer.php'); // Footer
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.templates/footer.php'); // Footer
     }
     public function user_exit(){
         $this->app->user_exit();

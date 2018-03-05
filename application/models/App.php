@@ -70,13 +70,13 @@ class App extends CI_Model {
         // Загружаем все параметры
 
 
-        if(file_exists($_SERVER['DOCUMENT_ROOT'].'/local/.modules/'.$arModule['code'].'/.config.php')){
+        if(file_exists($_SERVER['DOCUMENT_ROOT'].'/local/.modules/'.$arModule['code'].'.config.php')){
             // Локальный
-            include ($_SERVER['DOCUMENT_ROOT'].'/local/.modules/'.$arModule['code'].'/.config.php');
+            include ($_SERVER['DOCUMENT_ROOT'].'/local/.modules/'.$arModule['code'].'.config.php');
         }
-        elseif (file_exists($_SERVER['DOCUMENT_ROOT'].'/application/.admin/module/'.$arModule['code'].'/.config.php')){
+        elseif (file_exists($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.modules/'.$arModule['code'].'.config.php')){
             // Стандартный
-            include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/module/'.$arModule['code'].'/.config.php');
+            include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.modules/'.$arModule['code'].'.config.php');
         };
 
         return $arModule;
@@ -86,9 +86,9 @@ class App extends CI_Model {
             $arResult = array();
             $arResult = $this->app->detail($arParam['page']['id']);
         }
-        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/header.php'); // Header
-        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/module/module.php'); // module
-        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/app/footer.php'); // Footer
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.templates/header.php'); // Header
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.modules/module.php'); // module
+        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.templates/footer.php'); // Footer
     }
     // config
     function config_get(){}

@@ -9,11 +9,11 @@
 	],
 "creatorBuild": "26330",
 "files": {
-	"\/.config.php": {
+	"\/.gitignore": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/.config.php",
+		"oAP": "\/.gitignore",
 		"oF": 0
 		},
 	"\/.htaccess": {
@@ -37,18 +37,81 @@
 		"oO": 0,
 		"oS": 1
 		},
-	"\/application\/.admin\/app\/footer.php": {
+	"\/application\/.admin\/.modules\/.template\/add.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/application\/.admin\/app\/footer.php",
+		"oAP": "\/application\/.admin\/.modules\/.template\/add.php",
 		"oF": 0
 		},
-	"\/application\/.admin\/app\/header.php": {
+	"\/application\/.admin\/.modules\/.template\/category.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/application\/.admin\/app\/header.php",
+		"oAP": "\/application\/.admin\/.modules\/.template\/category.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/.modules\/.template\/category_add.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/.modules\/.template\/category_add.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/.modules\/.template\/category_edit.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/.modules\/.template\/category_edit.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/.modules\/.template\/config.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/.modules\/.template\/config.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/.modules\/.template\/edit.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/.modules\/.template\/edit.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/.modules\/.template\/index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/.modules\/.template\/index.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/.modules\/module.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/.modules\/module.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/.modules\/news.config.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/.modules\/news.config.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/.templates\/footer.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/.templates\/footer.php",
+		"oF": 0
+		},
+	"\/application\/.admin\/.templates\/header.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/.templates\/header.php",
 		"oF": 0
 		},
 	"\/application\/.admin\/index.php": {
@@ -56,69 +119,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/application\/.admin\/index.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/module\/.template\/add.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/module\/.template\/add.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/module\/.template\/category.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/module\/.template\/category.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/module\/.template\/category_add.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/module\/.template\/category_add.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/module\/.template\/category_edit.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/module\/.template\/category_edit.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/module\/.template\/config.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/module\/.template\/config.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/module\/.template\/edit.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/module\/.template\/edit.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/module\/.template\/index.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/module\/.template\/index.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/module\/module.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/module\/module.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/module\/news\/.config.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/module\/news\/.config.php",
 		"oF": 0
 		},
 	"\/application\/.admin\/user\/login.php": {
@@ -1310,16 +1310,6 @@
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/assets\/js\/bootstrap.min.min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
-		},
-	"\/assets\/admin\/js\/libs\/dropzone.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/assets\/js\/dropzone.min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
@@ -3215,12 +3205,91 @@
 		"oAP": "\/index.php",
 		"oF": 1
 		},
-	"\/local\/.modules\/news\/.config.php": {
+	"\/local\/.components\/list\/news\/.template.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/local\/.modules\/news\/.config.php",
+		"oAP": "\/local\/.components\/list\/news\/.template.php",
 		"oF": 0
+		},
+	"\/local\/.config.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/local\/.config.php",
+		"oF": 0
+		},
+	"\/local\/.modules\/news.config.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/local\/.modules\/news.config.php",
+		"oF": 0
+		},
+	"\/local\/uploads\/news\/67-addition_img_1.png": {
+		"ft": 32768,
+		"iS": 1203320,
+		"oA": 0,
+		"oAP": "\/local\/uploads\/news\/67-addition_img_1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/local\/uploads\/news\/67-addition_img_2.png": {
+		"ft": 32768,
+		"iS": 60196,
+		"oA": 0,
+		"oAP": "\/local\/uploads\/news\/67-addition_img_2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/local\/uploads\/news\/67-addition_img_3.png": {
+		"ft": 32768,
+		"iS": 60196,
+		"oA": 0,
+		"oAP": "\/local\/uploads\/news\/67-addition_img_3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/local\/uploads\/news\/67-img_detail.png": {
+		"ft": 32768,
+		"iS": 437256,
+		"oA": 0,
+		"oAP": "\/local\/uploads\/news\/67-img_detail.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/local\/uploads\/news\/67-img_preview.png": {
+		"ft": 32768,
+		"iS": 437256,
+		"oA": 0,
+		"oAP": "\/local\/uploads\/news\/67-img_preview.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/local\/uploads\/news\/69-img_preview.jpg": {
+		"ft": 16384,
+		"iS": 711641,
+		"oA": 0,
+		"oAP": "\/local\/uploads\/news\/69-img_preview.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/README.md": {
 		"cB": 0,
@@ -4596,71 +4665,6 @@
 		"oA": 1,
 		"oAP": "\/system\/libraries\/Zip.php",
 		"oF": 1
-		},
-	"\/uploads\/news\/67-addition_img_1.png": {
-		"ft": 32768,
-		"iS": 1203320,
-		"oA": 0,
-		"oAP": "\/uploads\/news\/67-addition_img_1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/uploads\/news\/67-addition_img_2.png": {
-		"ft": 32768,
-		"iS": 60196,
-		"oA": 0,
-		"oAP": "\/uploads\/news\/67-addition_img_2.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/uploads\/news\/67-addition_img_3.png": {
-		"ft": 32768,
-		"iS": 60196,
-		"oA": 0,
-		"oAP": "\/uploads\/news\/67-addition_img_3.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/uploads\/news\/67-img_detail.png": {
-		"ft": 32768,
-		"iS": 437256,
-		"oA": 0,
-		"oAP": "\/uploads\/news\/67-img_detail.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/uploads\/news\/67-img_preview.png": {
-		"ft": 32768,
-		"iS": 437256,
-		"oA": 0,
-		"oAP": "\/uploads\/news\/67-img_preview.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/uploads\/news\/69-img_preview.jpg": {
-		"ft": 16384,
-		"iS": 711641,
-		"oA": 0,
-		"oAP": "\/uploads\/news\/69-img_preview.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
 		}
 	},
 "hooks": [

@@ -62,15 +62,19 @@ $route['admin/news/add']                  = 'admin/module_add/';
 $route['admin/news/edit/(:any)']          = 'admin/module_edit/$1';
 $route['admin/news/config']               = 'admin/module_config/';
 $route['admin/news']                      = 'admin/module/';
+// * Админ
+$route['admin']                           = 'admin';
 
-// Пользователь
-$route['admin/user/']                     = 'admin/user/';
-$route['admin/user/login/']               = 'admin/user_login/';
+// * Пользователь
+$route['admin/user/registration']         = 'admin/user_registration/';
+$route['admin/user/login']                = 'admin/user_login/';
 $route['admin/user/exit']                 = 'admin/user_exit/';
-$route['admin/user/registration/']        = 'admin/user_registration/';
+$route['admin/user']                      = 'admin/user/';
 
+// * AJAX
+$route['ajax/(:any)/(:any)']             = 'ajax/$1/$2';
 
-// Навигация по страницам
+// * Навигация по страницам
 $route['(:any)/(:any)/(:any)/(:any)']   = 'pages/page/$4';
 $route['(:any)/(:any)/(:any)']          = 'pages/page/$3';
 $route['(:any)/(:any)']                 = 'pages/page/$2';

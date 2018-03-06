@@ -8,8 +8,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Pages.php" afterPath="$PROJECT_DIR$/application/controllers/Pages.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/helpers/app_helper.php" afterPath="$PROJECT_DIR$/application/helpers/app_helper.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/App.php" afterPath="$PROJECT_DIR$/application/models/App.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/html/error_404.php" afterPath="$PROJECT_DIR$/application/views/errors/html/error_404.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.codekit3" afterPath="$PROJECT_DIR$/config.codekit3" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,63 +29,10 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/config/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="76" column="40" lean-forward="false" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pages.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Pages.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="error_404.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/errors/html/error_404.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="191" column="36" lean-forward="false" selection-start-line="191" selection-start-column="36" selection-end-line="191" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/App.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="276" column="23" lean-forward="false" selection-start-line="276" selection-start-column="23" selection-end-line="276" selection-end-column="23" />
-              <folding>
-                <element signature="n#detail#0;n#App#0;n#!!top" expanded="false" />
-                <element signature="n#ajax#0;n#App#0;n#!!top" expanded="false" />
-                <element signature="n#get_module_config#0;n#App#0;n#!!top" expanded="false" />
-                <element signature="n#get_admin_module_page#0;n#App#0;n#!!top" expanded="false" />
-                <element signature="n#config_save#0;n#App#0;n#!!top" expanded="false" />
-                <element signature="n#module_get_field#0;n#App#0;n#!!top" expanded="false" />
-                <element signature="n#user_login#0;n#App#0;n#!!top" expanded="false" />
-                <element signature="n#user_check#0;n#App#0;n#!!top" expanded="false" />
-                <element signature="n#user_get#0;n#App#0;n#!!top" expanded="false" />
-                <element signature="n#user_exit#0;n#App#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$arParam['input'][$name]</find>
       <find>$arParam['old']</find>
       <find>$arParam</find>
       <find>value</find>
@@ -115,6 +62,7 @@
       <find>$inf</find>
       <find>uploads</find>
       <find>app/footer.php</find>
+      <find>module</find>
     </findStrings>
     <replaceStrings>
       <replace>item__table</replace>
@@ -142,6 +90,7 @@
       <dir>$PROJECT_DIR$/application/controllers</dir>
       <dir>$PROJECT_DIR$/application/models</dir>
       <dir>$PROJECT_DIR$/application/.components/admin.module.edit</dir>
+      <dir>$PROJECT_DIR$/application</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -150,9 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/.components/list/admin.module/.template.php" />
-        <option value="$PROJECT_DIR$/application/.admin/app/footer.php" />
-        <option value="$PROJECT_DIR$/assets/admin/js/admin-main.js" />
         <option value="$PROJECT_DIR$/assets/admin/sass/components/core/__form/style.scss" />
         <option value="$PROJECT_DIR$/assets/admin/sass/components/core/__form/__file/style.scss" />
         <option value="$PROJECT_DIR$/application/.admin/module/.template/index.php" />
@@ -182,7 +128,6 @@
         <option value="$PROJECT_DIR$/application/.components/admin.module.config/.boot.php" />
         <option value="$PROJECT_DIR$/application/.admin/module/news/.config.php" />
         <option value="$PROJECT_DIR$/assets/admin/js/admin-scripts.js" />
-        <option value="$PROJECT_DIR$/application/helpers/app_helper.php" />
         <option value="$PROJECT_DIR$/local/.modules/news/.config.php" />
         <option value="$PROJECT_DIR$/assets/admin/sass/application/libs/animate.scss" />
         <option value="$PROJECT_DIR$/assets/admin/sass/components/admin/style.scss" />
@@ -195,12 +140,16 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/local/pages/news/detail.php" />
         <option value="$PROJECT_DIR$/local/pages/news/index.php" />
-        <option value="$PROJECT_DIR$/local/pages/index.php" />
         <option value="$PROJECT_DIR$/local/pages/about/team/index.php" />
+        <option value="$PROJECT_DIR$/application/views/errors/html/error_404.php" />
         <option value="$PROJECT_DIR$/application/config/routes.php" />
+        <option value="$PROJECT_DIR$/local/pages/index.php" />
+        <option value="$PROJECT_DIR$/local/.config.php" />
         <option value="$PROJECT_DIR$/application/models/App.php" />
         <option value="$PROJECT_DIR$/application/controllers/Pages.php" />
-        <option value="$PROJECT_DIR$/application/views/errors/html/error_404.php" />
+        <option value="$PROJECT_DIR$/local/templates/tattooist/header.php" />
+        <option value="$PROJECT_DIR$/application/helpers/app_helper.php" />
+        <option value="$PROJECT_DIR$/local/templates/tattooist/footer.php" />
       </list>
     </option>
   </component>
@@ -262,22 +211,6 @@
               <item name="fraimwork" type="b2602c69:ProjectViewProjectNode" />
               <item name="fraimwork" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="fraimwork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fraimwork" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="fraimwork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fraimwork" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="fraimwork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fraimwork" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="local" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -299,11 +232,11 @@
       <recent name="$PROJECT_DIR$/application/.admin/module/.template" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/local/templates/tattooist" />
       <recent name="$PROJECT_DIR$/application/.admin/module" />
       <recent name="$PROJECT_DIR$/local/.modules" />
       <recent name="$PROJECT_DIR$/local" />
       <recent name="$PROJECT_DIR$/application/.components/admin.module.config/.default" />
-      <recent name="$PROJECT_DIR$/application/.admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -427,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520284359770</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Редиректы">
+      <created>1520329567652</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1520329567652</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -441,11 +381,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17688513" sideWeight="0.71192896" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17688513" sideWeight="0.71192896" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19450317" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -457,7 +397,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -524,7 +463,8 @@
     <MESSAGE value="Расположение файлов" />
     <MESSAGE value=".gitignore" />
     <MESSAGE value="Модули - пока все нормально" />
-    <option name="LAST_COMMIT_MESSAGE" value="Модули - пока все нормально" />
+    <MESSAGE value="Редиректы" />
+    <option name="LAST_COMMIT_MESSAGE" value="Редиректы" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -570,24 +510,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="333" column="36" lean-forward="false" selection-start-line="333" selection-start-column="36" selection-end-line="333" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/admin/sass/components/_header/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="54" column="22" lean-forward="false" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-          <folding>
-            <element signature="e#303#885#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/.admin/user/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -635,16 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Ajax.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="47" lean-forward="false" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
-          <folding>
-            <element signature="e#148#543#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/admin/js/admin-scripts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
@@ -678,24 +590,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/helpers/app_helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="n#drop#0;n#!!top" expanded="false" />
-            <element signature="n#val#0;n#!!top" expanded="false" />
-            <element signature="n#check_field#0;n#!!top" expanded="false" />
-            <element signature="n#check_email#0;n#!!top" expanded="false" />
-            <element signature="n#check_login#0;n#!!top" expanded="false" />
-            <element signature="n#check_password#0;n#!!top" expanded="false" />
-            <element signature="n#get_password#0;n#!!top" expanded="false" />
-            <element signature="n#get_clean#0;n#!!top" expanded="false" />
-            <element signature="n#get_date#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -866,24 +760,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/local/.config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-658">
-          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/.components/admin.module.edit/.default/.template.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1911">
           <caret line="171" column="47" lean-forward="false" selection-start-line="171" selection-start-column="47" selection-end-line="171" selection-end-column="47" />
-          <folding>
-            <element signature="e#2218#3463#0#PHP" expanded="false" />
-            <element signature="e#3480#4212#0#PHP" expanded="false" />
-            <element signature="e#6542#8919#0#PHP" expanded="false" />
-            <element signature="e#8940#9789#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -906,7 +787,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/local/.templates/.default/header.php">
+    <entry file="file://$PROJECT_DIR$/local/templates/.default/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
@@ -916,7 +797,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/local/.templates/.default/footer.php">
+    <entry file="file://$PROJECT_DIR$/local/templates/.default/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
@@ -948,26 +829,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/local/pages/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/local/pages/about/team/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="76" column="40" lean-forward="false" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -977,25 +842,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/App.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="276" column="23" lean-forward="false" selection-start-line="276" selection-start-column="23" selection-end-line="276" selection-end-column="23" />
-          <folding>
-            <element signature="n#detail#0;n#App#0;n#!!top" expanded="false" />
-            <element signature="n#ajax#0;n#App#0;n#!!top" expanded="false" />
-            <element signature="n#get_module_config#0;n#App#0;n#!!top" expanded="false" />
-            <element signature="n#get_admin_module_page#0;n#App#0;n#!!top" expanded="false" />
-            <element signature="n#config_save#0;n#App#0;n#!!top" expanded="false" />
-            <element signature="n#module_get_field#0;n#App#0;n#!!top" expanded="false" />
-            <element signature="n#user_login#0;n#App#0;n#!!top" expanded="false" />
-            <element signature="n#user_check#0;n#App#0;n#!!top" expanded="false" />
-            <element signature="n#user_get#0;n#App#0;n#!!top" expanded="false" />
-            <element signature="n#user_exit#0;n#App#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1031,18 +877,113 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Pages.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/errors/html/error_404.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="191" column="36" lean-forward="false" selection-start-line="191" selection-start-column="36" selection-end-line="191" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Ajax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+          <folding>
+            <element signature="n#module#0;n#Ajax#0;n#!!top" expanded="false" />
+            <element signature="e#148#543#0#PHP" expanded="false" />
+            <element signature="n#user#0;n#Ajax#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="65" column="50" lean-forward="false" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helpers/app_helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="135" column="12" lean-forward="false" selection-start-line="135" selection-start-column="12" selection-end-line="135" selection-end-column="12" />
+          <folding>
+            <element signature="n#drop#0;n#!!top" expanded="false" />
+            <element signature="n#val#0;n#!!top" expanded="false" />
+            <element signature="n#check_field#0;n#!!top" expanded="false" />
+            <element signature="n#check_email#0;n#!!top" expanded="false" />
+            <element signature="n#check_login#0;n#!!top" expanded="false" />
+            <element signature="n#check_password#0;n#!!top" expanded="false" />
+            <element signature="n#get_password#0;n#!!top" expanded="false" />
+            <element signature="n#get_clean#0;n#!!top" expanded="false" />
+            <element signature="n#get_date#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/App.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="96" column="13" lean-forward="false" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
+          <folding>
+            <element signature="n#component#0;n#App#0;n#!!top" expanded="false" />
+            <element signature="n#detail#0;n#App#0;n#!!top" expanded="false" />
+            <element signature="n#ajax#0;n#App#0;n#!!top" expanded="false" />
+            <element signature="n#get_module_config#0;n#App#0;n#!!top" expanded="false" />
+            <element signature="n#get_admin_module_page#0;n#App#0;n#!!top" expanded="false" />
+            <element signature="n#config_save#0;n#App#0;n#!!top" expanded="false" />
+            <element signature="n#module_get_field#0;n#App#0;n#!!top" expanded="false" />
+            <element signature="n#user_login#0;n#App#0;n#!!top" expanded="false" />
+            <element signature="n#user_check#0;n#App#0;n#!!top" expanded="false" />
+            <element signature="n#user_get#0;n#App#0;n#!!top" expanded="false" />
+            <element signature="n#user_exit#0;n#App#0;n#!!top" expanded="false" />
+            <element signature="n#template_header#0;n#App#0;n#!!top" expanded="false" />
+            <element signature="n#template_footer#0;n#App#0;n#!!top" expanded="false" />
+            <element signature="n#page#0;n#App#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Pages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/pages/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="350" column="40" lean-forward="false" selection-start-line="350" selection-start-column="31" selection-end-line="350" selection-end-column="40" />
+          <folding>
+            <element signature="e#94#16086#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/templates/tattooist/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1281">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/.config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/templates/tattooist/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="31" column="49" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="49" />
           <folding />
         </state>
       </provider>

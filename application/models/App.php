@@ -95,7 +95,6 @@ class App extends CI_Model {
         include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.templates/footer.php'); // Footer
     }
     // config
-    function config_get(){}
     function config_save($module = false, $array){
     }
     function module_get_field() {
@@ -247,10 +246,10 @@ class App extends CI_Model {
 
     // Templates
     function template_header($name = '.default'){
-        include ($_SERVER['DOCUMENT_ROOT'].'/local/.templates/'.$name.'/header.php');
+        include ($_SERVER['DOCUMENT_ROOT'].'/local/templates/'.$name.'/header.php');
     }
     function template_footer($name = '.default'){
-        include ($_SERVER['DOCUMENT_ROOT'].'/local/.templates/'.$name.'/footer.php');
+        include ($_SERVER['DOCUMENT_ROOT'].'/local/templates/'.$name.'/footer.php');
     }
 
     function page($CODE = 'index'){
@@ -277,4 +276,5 @@ class App extends CI_Model {
             show_404();
         }
     }
+
 }

@@ -118,3 +118,20 @@ function get_date($date,$type){
         return $date;
     }
 };
+
+//
+function get_config_app(){
+    $arConfig = array();
+
+    $url = $_SERVER['DOCUMENT_ROOT'].'/local/.config.php';
+    if(file_exists($url)){
+        include ($url);
+    }else{
+        // Создать файл .config;
+    }
+    return $arConfig;
+}
+function get_template_path(){
+    $arConfig = get_config_app();
+    return '/local/templates/'.$arConfig['template']['name'].'/';
+}

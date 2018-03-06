@@ -43,7 +43,11 @@ class App extends CI_Model {
     function detail($CODE) {
         // Выборка
         $arResult = $this->db->query("SELECT * FROM module_element WHERE id ='".$CODE."' OR code='".$CODE."'")->row_array();
-        return $arResult;
+        if(!empty($arResult)){
+            return $arResult;
+        }else{
+            return false;
+        }
     }
     function ajax($name , $url , $arParam){
         $data = '';
@@ -239,5 +243,38 @@ class App extends CI_Model {
     }
     function user_exit() {
         $this->session->unset_userdata('user');
+    }
+
+    // Templates
+    function template_header($name = '.default'){
+        include ($_SERVER['DOCUMENT_ROOT'].'/local/.templates/'.$name.'/header.php');
+    }
+    function template_footer($name = '.default'){
+        include ($_SERVER['DOCUMENT_ROOT'].'/local/.templates/'.$name.'/footer.php');
+    }
+
+    function page($CODE = 'index'){
+        $url = $_SERVER['DOCUMENT_ROOT'].'/local/pages/';
+        $file_name     = 'index';
+        $folder        = $this->uri->segment_array();
+        $folder_number = $this->uri->total_segments();
+
+        if(!empty($folder['2'])){
+            $arResult = $this->app->detail($CODE);
+        }
+        if(!empty($arResult)){
+            $file_name = 'detail';
+            $url .=  $folder['1'].'/';
+        }else{
+            foreach ($folder as $key =>$item){
+                $url .= $item.'/';
+            }
+        }
+
+        if(file_exists($url.$file_name.'.php')){
+            include ($url.$file_name.'.php');
+        }else{
+            show_404();
+        }
     }
 }

@@ -69,6 +69,13 @@ $route['admin/user/login/']               = 'admin/user_login/';
 $route['admin/user/exit']                 = 'admin/user_exit/';
 $route['admin/user/registration/']        = 'admin/user_registration/';
 
+
+// Навигация по страницам
+$route['(:any)/(:any)/(:any)/(:any)']   = 'pages/page/$4';
+$route['(:any)/(:any)/(:any)']          = 'pages/page/$3';
+$route['(:any)/(:any)']                 = 'pages/page/$2';
+$route['(:any)']                        = 'pages/page/$1';
+
 //$route['admin/(:any)/(:any)'] = 'admin/module_edit/$1';
 //$route['admin/(:any)/'] = 'admin/module/';
 //

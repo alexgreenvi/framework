@@ -3226,6 +3226,48 @@
 		"oAP": "\/local\/.modules\/news.config.php",
 		"oF": 0
 		},
+	"\/local\/.templates\/.default\/footer.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/local\/.templates\/.default\/footer.php",
+		"oF": 0
+		},
+	"\/local\/.templates\/.default\/header.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/local\/.templates\/.default\/header.php",
+		"oF": 0
+		},
+	"\/local\/pages\/about\/team\/index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/local\/pages\/about\/team\/index.php",
+		"oF": 0
+		},
+	"\/local\/pages\/index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/local\/pages\/index.php",
+		"oF": 0
+		},
+	"\/local\/pages\/news\/detail.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/local\/pages\/news\/detail.php",
+		"oF": 0
+		},
+	"\/local\/pages\/news\/index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/local\/pages\/news\/index.php",
+		"oF": 0
+		},
 	"\/local\/uploads\/news\/67-addition_img_1.png": {
 		"ft": 32768,
 		"iS": 1203320,

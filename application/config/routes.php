@@ -51,39 +51,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'pages';
 
-// admin
-$route['admin/news/category/add']              = 'admin/module_category_add/$1';
-$route['admin/news/category/delete/(:any)']    = 'admin/module_category_delete/$1';
-$route['admin/news/category/edit/(:any)']      = 'admin/module_category_edit/$1';
-$route['admin/news/categories']                = 'admin/module_category/';
-
-$route['admin/news/delete/(:any)']        = 'admin/module_delete/$1';
-$route['admin/news/add']                  = 'admin/module_add/';
-$route['admin/news/edit/(:any)']          = 'admin/module_edit/$1';
-$route['admin/news/config']               = 'admin/module_config/';
-$route['admin/news']                      = 'admin/module/';
-// * Админ
+// * Admin
+$route['admin/(:any)/(:any)/(:any)/(:any)']   = 'admin/page/$4';
+$route['admin/(:any)/(:any)/(:any)']          = 'admin/page/$3';
+$route['admin/(:any)/(:any)']                 = 'admin/page/$2';
+$route['admin/(:any)']                        = 'admin/page/$1';
 $route['admin']                           = 'admin';
-
-// * Пользователь
-$route['admin/user/registration']         = 'admin/user_registration/';
-$route['admin/user/login']                = 'admin/user_login/';
-$route['admin/user/exit']                 = 'admin/user_exit/';
-$route['admin/user']                      = 'admin/user/';
 
 // * AJAX
 $route['ajax/(:any)/(:any)']             = 'ajax/$1/$2';
 
 // * Навигация по страницам
-$route['(:any)/(:any)/(:any)/(:any)']   = 'pages/page/$4';
-$route['(:any)/(:any)/(:any)']          = 'pages/page/$3';
-$route['(:any)/(:any)']                 = 'pages/page/$2';
-$route['(:any)']                        = 'pages/page/$1';
-
-//$route['admin/(:any)/(:any)'] = 'admin/module_edit/$1';
-//$route['admin/(:any)/'] = 'admin/module/';
-//
-
+$route['(:any)/(:any)/(:any)/(:any)/(:any)']   = 'pages/page/$5';
+$route['(:any)/(:any)/(:any)/(:any)']          = 'pages/page/$4';
+$route['(:any)/(:any)/(:any)']                 = 'pages/page/$3';
+$route['(:any)/(:any)']                        = 'pages/page/$2';
+$route['(:any)']                               = 'pages/page/$1';
 
 //$route['404_override'] = '';
 //$route['translate_uri_dashes'] = FALSE;

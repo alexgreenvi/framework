@@ -37,83 +37,6 @@
 		"oO": 0,
 		"oS": 1
 		},
-	"\/application\/.admin\/.modules\/.template\/add.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/.modules\/.template\/add.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/.modules\/.template\/category.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/.modules\/.template\/category.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/.modules\/.template\/category_add.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/.modules\/.template\/category_add.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/.modules\/.template\/category_edit.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/.modules\/.template\/category_edit.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/.modules\/.template\/config.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/.modules\/.template\/config.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/.modules\/.template\/edit.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/.modules\/.template\/edit.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/.modules\/.template\/index.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/.modules\/.template\/index.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/.modules\/module.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/.modules\/module.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/.modules\/news.config.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/.modules\/news.config.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/.templates\/footer.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/.templates\/footer.php",
-		"oF": 0
-		},
-	"\/application\/.admin\/.templates\/header.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/application\/.admin\/.templates\/header.php",
-		"oF": 0
-		},
 	"\/application\/.admin\/index.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -121,68 +44,145 @@
 		"oAP": "\/application\/.admin\/index.php",
 		"oF": 0
 		},
-	"\/application\/.admin\/user\/login.php": {
+	"\/application\/.admin\/module\/category\/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/application\/.admin\/user\/login.php",
+		"oAP": "\/application\/.admin\/module\/category\/index.php",
 		"oF": 0
 		},
-	"\/application\/.components\/admin.module.config\/.default\/.boot.php": {
+	"\/application\/.admin\/module\/category_add\/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/application\/.components\/admin.module.config\/.default\/.boot.php",
+		"oAP": "\/application\/.admin\/module\/category_add\/index.php",
 		"oF": 0
 		},
-	"\/application\/.components\/admin.module.config\/.default\/.epilog.php": {
+	"\/application\/.admin\/module\/category_edit\/detail.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/application\/.components\/admin.module.config\/.default\/.epilog.php",
+		"oAP": "\/application\/.admin\/module\/category_edit\/detail.php",
 		"oF": 0
 		},
-	"\/application\/.components\/admin.module.config\/.default\/.prolog.php": {
+	"\/application\/.admin\/module\/config\/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/application\/.components\/admin.module.config\/.default\/.prolog.php",
+		"oAP": "\/application\/.admin\/module\/config\/index.php",
 		"oF": 0
 		},
-	"\/application\/.components\/admin.module.config\/.default\/.template.php": {
+	"\/application\/.admin\/module\/element_add\/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/application\/.components\/admin.module.config\/.default\/.template.php",
+		"oAP": "\/application\/.admin\/module\/element_add\/index.php",
 		"oF": 0
 		},
-	"\/application\/.components\/admin.module.edit\/.default\/.boot.php": {
+	"\/application\/.admin\/module\/element_edit\/detail.php": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/application\/.components\/admin.module.edit\/.default\/.boot.php",
-		"oF": 1
+		"oA": 0,
+		"oAP": "\/application\/.admin\/module\/element_edit\/detail.php",
+		"oF": 0
 		},
-	"\/application\/.components\/admin.module.edit\/.default\/.epilog.php": {
+	"\/application\/.admin\/module\/index.php": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/application\/.components\/admin.module.edit\/.default\/.epilog.php",
-		"oF": 1
+		"oA": 0,
+		"oAP": "\/application\/.admin\/module\/index.php",
+		"oF": 0
 		},
-	"\/application\/.components\/admin.module.edit\/.default\/.prolog.php": {
+	"\/application\/.admin\/user\/login\/index.php": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/application\/.components\/admin.module.edit\/.default\/.prolog.php",
-		"oF": 1
+		"oA": 0,
+		"oAP": "\/application\/.admin\/user\/login\/index.php",
+		"oF": 0
 		},
-	"\/application\/.components\/admin.module.edit\/.default\/.template.php": {
+	"\/application\/.components\/admin.module\/category.edit\/.boot.php": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/application\/.components\/admin.module.edit\/.default\/.template.php",
-		"oF": 1
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module\/category.edit\/.boot.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module\/category.edit\/.epilog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module\/category.edit\/.epilog.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module\/category.edit\/.prolog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module\/category.edit\/.prolog.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module\/category.edit\/.template.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module\/category.edit\/.template.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module\/config\/.boot.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module\/config\/.boot.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module\/config\/.epilog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module\/config\/.epilog.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module\/config\/.prolog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module\/config\/.prolog.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module\/config\/.template.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module\/config\/.template.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module\/element.edit\/.boot.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module\/element.edit\/.boot.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module\/element.edit\/.epilog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module\/element.edit\/.epilog.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module\/element.edit\/.prolog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module\/element.edit\/.prolog.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module\/element.edit\/.template.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module\/element.edit\/.template.php",
+		"oF": 0
 		},
 	"\/application\/.components\/list\/.default\/.boot.php": {
 		"cB": 0,
@@ -253,6 +253,27 @@
 		"oA": 1,
 		"oAP": "\/application\/.htaccess",
 		"oF": 1
+		},
+	"\/application\/.templates\/admin\/.blocks\/module_aside\/.default.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.templates\/admin\/.blocks\/module_aside\/.default.php",
+		"oF": 0
+		},
+	"\/application\/.templates\/admin\/footer.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.templates\/admin\/footer.php",
+		"oF": 0
+		},
+	"\/application\/.templates\/admin\/header.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.templates\/admin\/header.php",
+		"oF": 0
 		},
 	"\/application\/cache": {
 		"ft": 65536,
@@ -365,13 +386,6 @@
 		"oAP": "\/application\/config\/user_agents.php",
 		"oF": 1
 		},
-	"\/application\/controllers\/About.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/application\/controllers\/About.php",
-		"oF": 1
-		},
 	"\/application\/controllers\/Admin.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -386,25 +400,11 @@
 		"oAP": "\/application\/controllers\/Ajax.php",
 		"oF": 1
 		},
-	"\/application\/controllers\/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/application\/controllers\/index.html",
-		"oF": 1
-		},
 	"\/application\/controllers\/Pages.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/application\/controllers\/Pages.php",
-		"oF": 1
-		},
-	"\/application\/controllers\/Welcome.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/application\/controllers\/Welcome.php",
 		"oF": 1
 		},
 	"\/application\/core\/index.html": {
@@ -3212,18 +3212,25 @@
 		"oAP": "\/local\/.components\/list\/news\/.template.php",
 		"oF": 0
 		},
-	"\/local\/.config.php": {
+	"\/local\/.config\/.config.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/local\/.config.php",
+		"oAP": "\/local\/.config\/.config.php",
 		"oF": 0
 		},
-	"\/local\/.modules\/news.config.php": {
+	"\/local\/.config\/module\/news.config.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/local\/.modules\/news.config.php",
+		"oAP": "\/local\/.config\/module\/news.config.php",
+		"oF": 0
+		},
+	"\/local\/.config\/module\/team.config.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/local\/.config\/module\/team.config.php",
 		"oF": 0
 		},
 	"\/local\/pages\/about\/team\/index.php": {
@@ -3962,66 +3969,81 @@
 		"oAP": "\/local\/templates\/tattooist\/video\/video.mp4",
 		"oF": 0
 		},
-	"\/local\/uploads\/news\/67-addition_img_1.png": {
-		"ft": 32768,
-		"iS": 1203320,
-		"oA": 0,
-		"oAP": "\/local\/uploads\/news\/67-addition_img_1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/local\/uploads\/news\/67-addition_img_2.png": {
-		"ft": 32768,
-		"iS": 60196,
-		"oA": 0,
-		"oAP": "\/local\/uploads\/news\/67-addition_img_2.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/local\/uploads\/news\/67-addition_img_3.png": {
-		"ft": 32768,
-		"iS": 60196,
-		"oA": 0,
-		"oAP": "\/local\/uploads\/news\/67-addition_img_3.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/local\/uploads\/news\/67-img_detail.png": {
-		"ft": 32768,
-		"iS": 437256,
-		"oA": 0,
-		"oAP": "\/local\/uploads\/news\/67-img_detail.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/local\/uploads\/news\/67-img_preview.png": {
-		"ft": 32768,
-		"iS": 437256,
-		"oA": 0,
-		"oAP": "\/local\/uploads\/news\/67-img_preview.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/local\/uploads\/news\/69-img_preview.jpg": {
+	"\/local\/uploads\/news\/images\/79-img_detail.jpg": {
 		"ft": 16384,
-		"iS": 711641,
+		"iS": 9755,
 		"oA": 0,
-		"oAP": "\/local\/uploads\/news\/69-img_preview.jpg",
+		"oAP": "\/local\/uploads\/news\/images\/79-img_detail.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/local\/uploads\/news\/images\/79-img_preview.jpg": {
+		"ft": 16384,
+		"iS": 14167,
+		"oA": 0,
+		"oAP": "\/local\/uploads\/news\/images\/79-img_preview.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/local\/uploads\/news\/images\/80-img_detail.jpg": {
+		"ft": 16384,
+		"iS": 9755,
+		"oA": 0,
+		"oAP": "\/local\/uploads\/news\/images\/80-img_detail.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/local\/uploads\/news\/images\/80-img_preview.jpg": {
+		"ft": 16384,
+		"iS": 14167,
+		"oA": 0,
+		"oAP": "\/local\/uploads\/news\/images\/80-img_preview.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/local\/uploads\/news\/images\/96-img_preview.jpg": {
+		"ft": 16384,
+		"iS": 8290,
+		"oA": 0,
+		"oAP": "\/local\/uploads\/news\/images\/96-img_preview.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/local\/uploads\/news\/images\/97-img_detail.jpg": {
+		"ft": 16384,
+		"iS": 9755,
+		"oA": 0,
+		"oAP": "\/local\/uploads\/news\/images\/97-img_detail.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/local\/uploads\/news\/images\/98-img_detail.jpg": {
+		"ft": 16384,
+		"iS": 8290,
+		"oA": 0,
+		"oAP": "\/local\/uploads\/news\/images\/98-img_detail.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/local\/uploads\/news\/images\/98-img_preview.jpg": {
+		"ft": 16384,
+		"iS": 20145,
+		"oA": 0,
+		"oAP": "\/local\/uploads\/news\/images\/98-img_preview.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

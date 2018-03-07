@@ -25,13 +25,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         width: 100%;
         height: 300px;
         top: 50%;
-        margin-top:-150px;
+        margin-top:-250px;
     }
 
     .cont_error > h1  {
         font-family: 'Lato', sans-serif;
         font-weight: 400;
-        font-size:150px;
+        font-size:250px;
         color:#fff;
         position: relative;
         left:-100%;
@@ -146,16 +146,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
     @-webkit-keyframes animation_error_2 {
-        from { -webkit-transform: rotate(-15deg);
-            transform: rotate(-15deg);
+        from { -webkit-transform: rotate(-25deg);
+            transform: rotate(-50deg);
         }
         to { -webkit-transform: rotate(-20deg);
             transform: rotate(-20deg);
         }
     }
     @-o-keyframes animation_error_2 {
-        from { -webkit-transform: rotate(-15deg);
-            transform: rotate(-15deg);
+        from { -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
         }
         to { -webkit-transform: rotate(-20deg);
             transform: rotate(-20deg);
@@ -163,16 +163,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }
     }
     @-moz-keyframes animation_error_2 {
-        from { -webkit-transform: rotate(-15deg);
-            transform: rotate(-15deg);
+        from { -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
         }
         to { -webkit-transform: rotate(-20deg);
             transform: rotate(-20deg);
         }
     }
     @keyframes animation_error_2 {
-        from { -webkit-transform: rotate(-15deg);
-            transform: rotate(-15deg);
+        from { -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
         }
         to { -webkit-transform: rotate(-20deg);
             transform: rotate(-20deg);

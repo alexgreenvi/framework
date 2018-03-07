@@ -1,16 +1,18 @@
 <?php defined('BASEPATH') OR exit('Нет прямого доступа к скрипту');
 
 class App extends CI_Model {
-    function component($component , $name , $template , $arParam){
-        if(!isset($arParam)) $arParam  = array();
+    function component($component = null, $name = null , $template = null , $arParam = array()){
+        $url = $_SERVER['DOCUMENT_ROOT'].'/application/.components/';
+        $url_name = null;
         $arResult = array();
 
-
-        $url = $_SERVER['DOCUMENT_ROOT'].'/application/.components/';
-
-
         if(!empty($component)) $url .= $component.'/';
-        if(!empty($name)) $url_name = $name.'/'; else $url_name = '.default/';
+        if(!empty($name)){
+            $url_name = $name.'/';
+        }else{
+            $url_name = '.default/';
+        }
+
 
         // prolog
         if(file_exists($url.$url_name.'.prolog.php')){
@@ -40,9 +42,15 @@ class App extends CI_Model {
             include ($url.'.default/.epilog.php');
         };
     }
-    function detail($CODE) {
-        // Выборка
-        $arResult = $this->db->query("SELECT * FROM module_element WHERE id ='".$CODE."' OR code='".$CODE."'")->row_array();
+    function detail($TYPE, $CODE , $table = 'module_element') {
+        if($TYPE == 'CODE'){
+            $where = "code='".$CODE."'";
+        }elseif ($TYPE == 'ID') {
+            $where = "id ='".$CODE."'";
+        }
+        // * Выборка
+        $arResult = $this->db->query("SELECT * FROM ".$table." WHERE ".$where)->row_array();
+
         if(!empty($arResult)){
             return $arResult;
         }else{
@@ -66,36 +74,21 @@ class App extends CI_Model {
     }
 
     // MODULES
-    function get_module_config($CODE){
+    function module_get_config($CODE){
         $arModule = array();
         $arModule['code'] = $CODE; // CODE модуля
-        // Выбираем нужный модуль
+        // * Выбираем нужный модуль
         $arModule = $this->db->query("SELECT * FROM module WHERE code = '".$arModule['code']."'")->row_array();
-        // Загружаем все параметры
+        // * Загружаем все параметры
 
-
-        if(file_exists($_SERVER['DOCUMENT_ROOT'].'/local/.modules/'.$arModule['code'].'.config.php')){
-            // Локальный
-            include ($_SERVER['DOCUMENT_ROOT'].'/local/.modules/'.$arModule['code'].'.config.php');
+        $url = $_SERVER['DOCUMENT_ROOT'].'/local/.config/module/'.$arModule['code'].'.config.php';
+        if(file_exists($url)){
+            // * Локальный
+            include ($url);
         }
-        elseif (file_exists($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.modules/'.$arModule['code'].'.config.php')){
-            // Стандартный
-            include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.modules/'.$arModule['code'].'.config.php');
-        };
+        $arModule['count'] = $this->db->from('module_element')->where('code',$arModule['code'])->count_all_results(); // Количество материалов в модуле
 
         return $arModule;
-    }
-    function get_admin_module_page($arParam){
-        if($arParam['page']['detail'] == true){
-            $arResult = array();
-            $arResult = $this->app->detail($arParam['page']['id']);
-        }
-        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.templates/header.php'); // Header
-        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.modules/module.php'); // module
-        include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.templates/footer.php'); // Footer
-    }
-    // config
-    function config_save($module = false, $array){
     }
     function module_get_field() {
         // Получаем все поля
@@ -194,7 +187,7 @@ class App extends CI_Model {
                     break;
                 default;
                     $arParam[$name]['name'] = '???';
-                break;
+                    break;
             }
 
             $arParam[$name]['description'] = '';
@@ -202,7 +195,6 @@ class App extends CI_Model {
 
             unset($arParam['id']);
             unset($arParam['module_id']);
-            unset($arParam['code']);
 
         }
         return $arParam;
@@ -245,18 +237,58 @@ class App extends CI_Model {
     }
 
     // Templates
-    function template_header($name = '.default'){
-        include ($_SERVER['DOCUMENT_ROOT'].'/local/templates/'.$name.'/header.php');
+    function template_header($template = '.default'){
+        $url = $_SERVER['DOCUMENT_ROOT'].'/local/templates/'.$template.'/header.php';
+        $url_default = $_SERVER['DOCUMENT_ROOT'].'/application/.templates/'.$template.'/header.php';
+
+        if(file_exists($url)){
+            include ($url);
+        }elseif (file_exists($url_default)){
+            include ($url_default);
+        }else{
+            echo 'Шаблон не найден';
+        }
     }
-    function template_footer($name = '.default'){
-        include ($_SERVER['DOCUMENT_ROOT'].'/local/templates/'.$name.'/footer.php');
+    function template_footer($template = '.default'){
+        $url = $_SERVER['DOCUMENT_ROOT'].'/local/templates/'.$template.'/footer.php';
+        $url_default = $_SERVER['DOCUMENT_ROOT'].'/application/.templates/'.$template.'/footer.php';
+
+        if(file_exists($url)){
+            include ($url);
+        }elseif (file_exists($url_default)){
+            include ($url_default);
+        }else{
+            echo 'Шаблон не найден';
+        }
+    }
+    function template($template = '.default', $name = null , $views = '.default', $arParam = array()){
+        $url = $_SERVER['DOCUMENT_ROOT'].'/application/.templates/'.$template.'/.blocks/';
+
+        if(!empty($name)){
+            $url .= $name.'/';
+        }
+
+        if(!empty($views)){
+            $url .= $views.'.php';
+        }else{
+            $url .= '.default.php';
+        }
+
+
+        // * Загружаем
+        if(file_exists($url)){
+            include ($url);
+        }else{
+            echo $url;;
+        }
     }
 
+    // * Работа со структурой файлов
+    // * Как движку правильно работать с файлами
     function page($CODE = 'index'){
         $url = $_SERVER['DOCUMENT_ROOT'].'/local/pages/';
         $file_name     = 'index';
         $folder        = $this->uri->segment_array();
-        $folder_number = $this->uri->total_segments();
 
         if(!empty($folder['2'])){
             $arResult = $this->app->detail($CODE);
@@ -276,5 +308,59 @@ class App extends CI_Model {
             show_404();
         }
     }
+    function page_admin($arParam = array()){
+        $url = $_SERVER['DOCUMENT_ROOT'].'/application/.';
+        $arResult = array(); // Выборка для детальных страницы
+        $file_name     = 'index';
+        $folder        = $this->uri->segment_array();  // Массив с сигментами
+        $folder_number = $this->uri->total_segments(); // Количество сигментов
 
+
+        // * Заменяем путь если нужно
+        foreach ($folder as $key =>$item){
+            if(isset($folder[2]) AND $folder[2] == 'module'){
+                // * module
+                // * Третий сигмент убираем чтобы, можно было менять назавание модуля
+                // * Пятый сигмент убираем чтобы, можно было редактировать элемент
+                if( $key != 3 AND $key != 5) {
+                    $url .= $item.'/';
+                }
+            } else {
+                $url .= $item.'/';
+            }
+        }
+
+        // *
+        // * MODULE
+        // *
+        if(isset($folder[2]) AND $folder[2] == 'module'){
+            // * Вырорка конфигураций модуля
+            if(!empty($folder[3])){
+                $arParam = $this->app->module_get_config($folder[3]);
+            }
+            // * Выборка материала для детальной странице
+           if (!empty($folder[5])){
+               $table = 'module_element';
+
+               // * Выборка для категорий
+               if($folder[4] == 'category_edit') {
+                   $table = 'module_category';
+               }
+
+               $arResult = $this->app->detail('ID', $folder[5], $table);
+           }
+        }
+        // *********
+
+        // * Если есть выборка элемента, то идем в детальную страницу
+        if(!empty($arResult)){
+            $file_name = 'detail';
+        }
+        // * Загружаем нужную станицу
+        if(file_exists($url.$file_name.'.php')){
+            include ($url.$file_name.'.php');
+        }else{
+            echo '<div style="margin-top: 30px;text-align: center;">'.$url.$file_name.'.php'.'<br><br>Что-то пошло не так !!!!</div>';
+        }
+    }
 }

@@ -2,10 +2,30 @@
   padding-top: 30px;
   &__menu {
     &__title {
+      position: relative;
       margin-top: 34px;
       padding: 0 0 15px 10px;
       font-weight: bold;
       text-transform: uppercase;
+      &__add {
+        position: absolute;
+        right: 20px;
+        top: 3px;
+        width: 22px;
+        text-align: center;
+        font-size: 16px;
+        @include border-radius(100%);
+        background: #aeb3bc;
+        & a {
+          color: #edf1f2;
+        }
+        &:hover {
+          background: #00c57c;;
+          & a {
+
+          }
+        }
+      }
     }
     &__list {
       & li {

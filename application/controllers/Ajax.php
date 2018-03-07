@@ -2,29 +2,29 @@
 
 class Ajax extends CI_Controller {
     public function module($type) {
-        if($type == 'edit' OR $type == 'add') {
-            $arModule = $this->app->get_module_config($_POST['ajaxFormModuleCode']);
-            $this->app->component('admin.module.edit', '', '', [
+        if($type == 'element_edit' OR $type == 'element_add') {
+            $arParam = $this->app->module_get_config($_POST['ajaxFormModuleCode']);
+            $this->app->component('admin.module', 'element.edit', '', [
                 'post' => $_POST, // Все данный POST
                 'files' => $_FILES, // Все данный FILES
-                'module' => $arModule,
+                'module' => $arParam,
                 'type' => $type
             ]);
         }
         if($type == 'category_edit' OR $type == 'category_add') {
-            $arModule = $this->app->get_module_config($_POST['ajaxFormModuleCode']);
-            $this->app->component('admin.module.edit', '', '', [
+            $arParam = $this->app->module_get_config($_POST['ajaxFormModuleCode']);
+            $this->app->component('admin.module', 'category.edit', '', [
                 'post' => $_POST, // Все данный POST
                 'files' => $_FILES, // Все данный FILES
-                'module' => $arModule,
+                'module' => $arParam,
                 'type' => $type
             ]);
         }
         if($type == 'config'){
-            $arModule = $this->app->get_module_config($_POST['ajaxFormModuleCode']);
-            $this->app->component('admin.module.config', '', '', [
+            $arParam = $this->app->module_get_config($_POST['ajaxFormModuleCode']);
+            $this->app->component('admin.module', 'config', '', [
                 'post' => $_POST, // Все данный POST
-                'module' => $arModule,
+                'module' => $arParam,
                 'type' => $type
             ]);
         }

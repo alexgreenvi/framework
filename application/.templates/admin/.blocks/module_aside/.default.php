@@ -1,7 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<div class="container-fluid">
-    <div class="container">
-        <aside class="container-aside">
+<aside class="container-aside">
             <div class="aside">
                 <div class="aside__menu">
                     <ul class="aside__menu__list">
@@ -13,22 +10,22 @@
                         </li>
                     </ul>
                     <div class="aside__menu__title">
-                        <span><?=$arParam['module']['name']?></span>
+                        <span><?=$arParam['name']?></span>
                     </div>
                     <ul class="aside__menu__list">
                         <?$menu = [
-                                'Материалы' => '',
-                                'Категории' => 'categories',
-                                'Настройки' => 'config'
+                            'Материалы' => '',
+                            'Категории' => 'category',
+                            'Настройки' => 'config'
                         ]?>
                         <?foreach ($menu as $key => $item):?>
                             <?
-                            $class = null;
-                            if($this->uri->segment(3) == $item) $class = 'active';
+                                $class = null;
+                                if($this->uri->segment(4) == $item) $class = 'active';
 
-                            $url = '/admin/';
-                            $url .= $this->uri->segment(2);
-                            if(!empty($item)) $url .= '/'.$item.'/'
+                                $url = '/admin/module/';
+                                $url .= $this->uri->segment(3);
+                                if(!empty($item)) $url .= '/'.$item.'/'
                             ?>
                             <li class="<?=$class?>">
                                 <a href="<?=$url?>" title="<?=$key?>"><?=$key?></a>
@@ -38,10 +35,3 @@
                 </div>
             </div>
         </aside>
-        <div class="container-main">
-            <div class="admin">
-                <?include ($_SERVER['DOCUMENT_ROOT'].'/application/.admin/.modules/.template/'.$arParam['page']['name'].'.php');?>
-            </div>
-        </div>
-    </div>
-</div>

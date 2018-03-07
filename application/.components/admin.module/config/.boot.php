@@ -120,6 +120,6 @@ if($ajaxFormButton == 'push'){
         $arBase['description'] = $arModule['description'];
         $this->db->where('id',$arModule['id'])->update('module',$arBase);
 
-        file_put_contents('local/.modules/' . $arParam['module']['code'] . '.config.php', '<?php $arModule = ' . var_export($arModule, true) . ';');
+        file_put_contents('local/.config/module/' . $arParam['module']['code'] . '.config.php', '<?php $arModule = ' . var_export($arModule, true) . ';');
     }
 }

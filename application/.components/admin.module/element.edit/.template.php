@@ -96,11 +96,16 @@
                         <div class="sh-form__field__row__left">
                             <div class="sh-file">
                                 <?
-                                if(!empty($arParam['old'][$name]) AND !file_exists($_SERVER['DOCUMENT_ROOT'].$arParam['post'][$name])){
+                                $file_url = '';
+                                $file_status = '';
+
+                                if(isset($arParam['old'][$name]) AND !empty($arParam['old'][$name]) AND !file_exists($_SERVER['DOCUMENT_ROOT'].$arParam['post'][$name])) {
                                     $file_url = '';
                                     $file_status = 'load';
-                                }else{
-                                    $file_url = $arParam['old'][$name];
+                                } else {
+                                    if(isset($arParam['old'][$name])){
+                                        $file_url = $arParam['old'][$name];
+                                    }
                                     $file_status = '';
                                 }
                                 ?>
@@ -188,14 +193,15 @@
             <?}?>
         <?}?>
     <?endforeach;?>
-        <a href="<?=$arParam['link']?>" title="" class="core__btn core__btn_default"><span>Отменить</span></a>
-    <?if($arParam['type'] == 'edit' OR $arParam['type'] == 'category_edit'):?>
-        <a href="<?=$arParam['link']?>delete/<?=$arParam['post']['ajaxFormModuleElementId']?>" title="" class="core__btn core__btn_danger"><span>Удалить</span></a>
+
+    <a href="/admin/module/<?=$arParam['module']['code']?>/" title="" class="core__btn core__btn_default"><span>Отменить</span></a>
+    <?if($arParam['type'] == 'element_edit'):?>
+        <a href="/admin/module/<?=$arParam['module']['code']?>/delete/<?=$arParam['post']['ajaxFormModuleElementId']?>" title="" class="core__btn core__btn_danger"><span>Удалить</span></a>
     <?endif;?>
     <button class="core__btn" name="push">
         <span>
-            <?if($arParam['type'] == 'edit' OR $arParam['type'] == 'category_edit') echo 'Изменить'?>
-            <?if($arParam['type'] == 'add' OR $arParam['type'] == 'category_add')  echo 'Добавить'?>
+            <?if($arParam['type'] == 'element_edit') echo 'Изменить'?>
+            <?if($arParam['type'] == 'element_add')  echo 'Добавить'?>
         </span>
     </button>
 </div>

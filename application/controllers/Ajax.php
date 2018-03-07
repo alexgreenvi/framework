@@ -28,6 +28,12 @@ class Ajax extends CI_Controller {
                 'type' => $type
             ]);
         }
+        if($type == 'module_add'){
+            $this->app->component('admin.module', 'add', '', [
+                'post' => $_POST, // Все данный POST
+                'type' => $type
+            ]);
+        }
     }
     public function user($CODE){
         $this->app->component('user.'.$CODE , '', '', [

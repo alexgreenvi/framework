@@ -45,6 +45,12 @@
                                 </a>
                             </li>
                         <?endforeach;?>
+                        <li>
+                            <a href="/admin/module_add/" title="">
+                                <i class="core__icon core__icon_plug"></i>
+                                <span>Добавить модуль</span>
+                            </a>
+                        </li>
                     </ul>
                     <div class="aside__menu__title">
                         <span>Расширения</span>

@@ -93,11 +93,46 @@
 		"oAP": "\/application\/.admin\/module\/index.php",
 		"oF": 0
 		},
+	"\/application\/.admin\/module_add\/index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.admin\/module_add\/index.php",
+		"oF": 0
+		},
 	"\/application\/.admin\/user\/login\/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/application\/.admin\/user\/login\/index.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module\/add\/.boot.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module\/add\/.boot.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module\/add\/.epilog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module\/add\/.epilog.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module\/add\/.prolog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module\/add\/.prolog.php",
+		"oF": 0
+		},
+	"\/application\/.components\/admin.module\/add\/.template.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/application\/.components\/admin.module\/add\/.template.php",
 		"oF": 0
 		},
 	"\/application\/.components\/admin.module\/category.edit\/.boot.php": {

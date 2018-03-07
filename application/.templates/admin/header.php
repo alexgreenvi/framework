@@ -26,48 +26,34 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans:400,700" rel="stylesheet">
 </head>
-<body class="body-content">
+<body class="sh-body-content">
 <?//include ('_icon.php');?>
-<header>
-    <!-- MOBILE MENU -->
-    <div class="core__menu-nav__mobile__alert">
-        <!-- После адоптации - это меню откроется  -->
-        <div class="core__menu-nav__mobile__alert__user">
-
-        </div>
-        <div class="core__menu-nav__mobile__alert__menu" data-core-name="Меню" data-js-core-resize-after="menu">
-        </div>
-    </div>
-    <div class="core__menu-nav__mobile__button">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <!-- END MOBILE MENU -->
-    <?if($this->app->user_check('admin')):?>
-        <div class="header">
-            <div class="header__bg">
-                <div class="container">
-                    <div class="header__main">
-                        <div class="header__menu">
-                            <ul class="header__menu__list">
-                                <li class="active"><a href="" title="Для Вас">Модули</a></li>
-                                <li><a href="" title="Каталог">Пользователи</a></li>
-                                <li><a href="" title="Статьи">Настройки</a></li>
-                            </ul>
-                        </div>
-                        <?if($this->app->user_check()):?>
-                            <div class="header__user">
-                                <a href=""><?=$this->app->user_get('name')?></a>
-                                <i class="core__icon core__icon_restricted-user"></i>
-                                <span> | </span>
-                                <a href="/admin/user/exit/">Выход</a>
-                            </div>
-                        <?endif;?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <?endif;?>
-</header>
-<div class="body-main" role="main">
+<!--<header>-->
+<!--    --><?//if($this->app->user_check('admin')):?>
+<!--        <div class="header">-->
+<!--            <div class="header__bg">-->
+<!--                <div class="container">-->
+<!--                    <div class="header__main">-->
+<!--                        <div class="header__menu">-->
+<!--                            <ul class="header__menu__list">-->
+<!--                                <li class="active"><a href="/admin/" title="Для Вас">Модули</a></li>-->
+<!--<!--                                <li><a href="" title="Каталог">Пользователи</a></li>-->
+<!--<!--                                <li><a href="" title="Статьи">Настройки</a></li>-->
+<!--                                <li><a href="" title="">Обновление</a></li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                        --><?//if($this->app->user_check()):?>
+<!--                            <div class="header__user">-->
+<!--                                <a href="">--><?//=$this->app->user_get('name')?><!--</a>-->
+<!--                                <i class="core__icon core__icon_restricted-user"></i>-->
+<!--                                <span> | </span>-->
+<!--                                <a href="/admin/user/exit/">Выход</a>-->
+<!--                            </div>-->
+<!--                        --><?//endif;?>
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    --><?//endif;?>
+<!--</header>-->
+<div class="sh-body-main" role="main">

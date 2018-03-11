@@ -120,6 +120,16 @@ if($ajaxFormButton == 'push'){
         $arBase['description'] = $arModule['description'];
         $this->db->where('id',$arModule['id'])->update('module',$arBase);
 
+
+        // * Если нет такой папки то нужно создать
+        $url_module = $_SERVER['DOCUMENT_ROOT'].'/local/';
+        if (!is_dir($url_module)) mkdir($url_module, 0777, true);
+        $url_module .= '.config/';
+        if (!is_dir($url_module)) mkdir($url_module, 0777, true);
+        $url_module .= 'module/';
+        if (!is_dir($url_module)) mkdir($url_module, 0777, true);
+
+
         file_put_contents('local/.config/module/' . $arParam['module']['code'] . '.config.php', '<?php $arModule = ' . var_export($arModule, true) . ';');
     }
 }

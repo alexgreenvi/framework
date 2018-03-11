@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="afd94ced-3c0d-4825-8573-73b4f565f186" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/.admin/index.php" afterPath="$PROJECT_DIR$/application/.admin/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/.templates/admin/header.php" afterPath="$PROJECT_DIR$/application/.templates/admin/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/admin/sass/components/_aside/style.scss" afterPath="$PROJECT_DIR$/assets/admin/sass/components/_aside/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/admin/sass/components/_header/style.scss" afterPath="$PROJECT_DIR$/assets/admin/sass/components/_header/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/admin/sass/components/admin/style.scss" afterPath="$PROJECT_DIR$/assets/admin/sass/components/admin/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/admin/sass/standart.scss" afterPath="$PROJECT_DIR$/assets/admin/sass/standart.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/admin.min.css" afterPath="$PROJECT_DIR$/assets/css/admin.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/.components/admin.module/config/.boot.php" afterPath="$PROJECT_DIR$/application/.components/admin.module/config/.boot.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.codekit3" afterPath="$PROJECT_DIR$/config.codekit3" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,74 +24,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/.templates/admin/header.php">
+      <file leaf-file-name=".boot.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/.components/admin.module/config/.boot.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="57" column="12" lean-forward="false" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+            <state relative-caret-position="508">
+              <caret line="125" column="53" lean-forward="false" selection-start-line="125" selection-start-column="53" selection-end-line="125" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/admin/sass/components/admin/style.scss">
+      <file leaf-file-name=".boot.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/.components/admin.module/element.edit/.boot.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="e#423#839#0" expanded="false" />
-                <element signature="e#850#1496#0" expanded="false" />
-                <element signature="e#884#1230#0" expanded="false" />
-                <element signature="e#1506#1769#0" expanded="false" />
-                <element signature="e#1881#2667#0" expanded="false" />
-                <element signature="e#2069#2135#0" expanded="false" />
-                <element signature="e#2153#2197#0" expanded="false" />
-                <element signature="e#2214#2251#0" expanded="false" />
-                <element signature="e#2381#2469#0" expanded="false" />
-                <element signature="e#2491#2657#0" expanded="false" />
-                <element signature="e#2691#4072#0" expanded="false" />
-                <element signature="e#2910#3327#0" expanded="false" />
-                <element signature="e#3339#3619#0" expanded="false" />
-                <element signature="e#3632#3745#0" expanded="false" />
-                <element signature="e#4083#4582#0" expanded="false" />
-                <element signature="e#4607#4713#0" expanded="false" />
-                <element signature="e#4743#5562#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/.admin/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+            <state relative-caret-position="-10">
+              <caret line="125" column="7" lean-forward="false" selection-start-line="125" selection-start-column="7" selection-end-line="125" selection-end-column="7" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/admin/sass/components/_header/style.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-              <folding>
-                <element signature="e#84#134#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/admin/sass/components/_aside/style.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-              <folding>
-                <element signature="e#257#1427#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -176,7 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/.admin/module/news/.config.php" />
         <option value="$PROJECT_DIR$/assets/admin/js/admin-scripts.js" />
         <option value="$PROJECT_DIR$/local/.modules/news/.config.php" />
         <option value="$PROJECT_DIR$/assets/admin/sass/application/libs/animate.scss" />
@@ -227,6 +168,7 @@
         <option value="$PROJECT_DIR$/assets/admin/sass/standart.scss" />
         <option value="$PROJECT_DIR$/assets/admin/sass/components/admin/style.scss" />
         <option value="$PROJECT_DIR$/application/.admin/index.php" />
+        <option value="$PROJECT_DIR$/application/.components/admin.module/config/.boot.php" />
       </list>
     </option>
   </component>
@@ -298,42 +240,30 @@
               <item name="fraimwork" type="b2602c69:ProjectViewProjectNode" />
               <item name="fraimwork" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name=".admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name=".components" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="fraimwork" type="b2602c69:ProjectViewProjectNode" />
               <item name="fraimwork" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name=".templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name=".components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin.module" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="fraimwork" type="b2602c69:ProjectViewProjectNode" />
               <item name="fraimwork" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name=".templates" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name=".components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin.module" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="fraimwork" type="b2602c69:ProjectViewProjectNode" />
               <item name="fraimwork" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name=".templates" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name=".blocks" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="fraimwork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fraimwork" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name=".templates" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name=".blocks" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="module_aside" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="fraimwork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fraimwork" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name=".components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin.module" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="element.edit" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -505,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520433517402</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Верстка">
+      <created>1520779214676</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1520779214677</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">
@@ -613,7 +550,8 @@
     <MESSAGE value="Редиректы" />
     <MESSAGE value="Шаблон" />
     <MESSAGE value="Меняем структуру данных" />
-    <option name="LAST_COMMIT_MESSAGE" value="Меняем структуру данных" />
+    <MESSAGE value="Верстка" />
+    <option name="LAST_COMMIT_MESSAGE" value="Верстка" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -659,7 +597,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/local/.config/.config.php" />
     <entry file="file://$PROJECT_DIR$/local/templates/tattooist/header.php" />
     <entry file="file://$PROJECT_DIR$/application/.templates/admin/footer.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -702,6 +639,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -709,13 +647,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/.components/admin.module/element.edit/.template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="207" column="7" lean-forward="false" selection-start-line="207" selection-start-column="7" selection-end-line="207" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -746,13 +678,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="136" column="1" lean-forward="false" selection-start-line="136" selection-start-column="1" selection-end-line="136" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/.components/admin.module/element.edit/.boot.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="137" column="25" lean-forward="false" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="25" />
+          <folding>
+            <element signature="n#drop#0;n#!!top" expanded="false" />
+            <element signature="n#val#0;n#!!top" expanded="false" />
+            <element signature="n#check_field#0;n#!!top" expanded="false" />
+            <element signature="n#check_email#0;n#!!top" expanded="false" />
+            <element signature="n#check_login#0;n#!!top" expanded="false" />
+            <element signature="n#check_password#0;n#!!top" expanded="false" />
+            <element signature="n#get_password#0;n#!!top" expanded="false" />
+            <element signature="n#get_clean#0;n#!!top" expanded="false" />
+            <element signature="n#get_date#0;n#!!top" expanded="false" />
+            <element signature="n#get_config_app#0;n#!!top" expanded="false" />
+            <element signature="n#get_template_path#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -760,13 +698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="581">
           <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/.components/admin.module/config/.boot.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="110" column="13" lean-forward="true" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -791,13 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/.admin/module/element_edit/detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/.admin/module/category/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -809,6 +733,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="77" lean-forward="false" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="77" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -897,14 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/.templates/admin/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="57" column="12" lean-forward="false" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/admin/sass/components/_header/style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -941,6 +858,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/.admin/module/element_edit/detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/.admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/admin/sass/components/admin/style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
@@ -967,10 +900,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/.admin/index.php">
+    <entry file="file://$PROJECT_DIR$/application/.templates/admin/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state relative-caret-position="646">
+          <caret line="57" column="12" lean-forward="false" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/.components/admin.module/element.edit/.template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="53" column="26" lean-forward="true" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+          <folding>
+            <element signature="e#2218#3463#0#PHP" expanded="false" />
+            <element signature="e#3480#4212#0#PHP" expanded="false" />
+            <element signature="e#6742#10057#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/.components/admin.module/config/.template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/.components/admin.module/element.edit/.boot.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="125" column="7" lean-forward="false" selection-start-line="125" selection-start-column="7" selection-end-line="125" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/.components/admin.module/config/.boot.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="125" column="53" lean-forward="false" selection-start-line="125" selection-start-column="53" selection-end-line="125" selection-end-column="53" />
           <folding />
         </state>
       </provider>

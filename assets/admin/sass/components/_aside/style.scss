@@ -1,5 +1,17 @@
 .aside {
-  padding-top: 30px;
+  position: relative;
+  z-index: 100;
+  top: -60px;
+  padding-top: 155px;
+  background: #edf1f2;
+  @include after(){
+    width: 1000px;
+    height: 100%;
+    top: 0;
+    left: -1000px;
+    position: absolute;
+    background: #edf1f2;
+  }
   &__menu {
     &__title {
       position: relative;

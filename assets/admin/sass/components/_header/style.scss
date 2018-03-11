@@ -1,5 +1,7 @@
 .header {
   @extend .container-fluid;
+  position: absolute;
+  z-index: 99;
 
   &__bg {
     background: #2c2e32;
@@ -14,6 +16,7 @@
   &__main {
     @extend .row;
     @extend .row-table;
+    padding-left: 360px;
   }
   // Элемменты
 

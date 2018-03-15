@@ -1,45 +1,49 @@
 <?php defined('BASEPATH') OR exit('Нет прямого доступа к скрипту');
 
 class App extends CI_Model {
-    function component($component = null, $name = null , $template = null , $arParam = array()){
-        $url = $_SERVER['DOCUMENT_ROOT'].'/application/.components/';
-        $url_name = null;
+    function component($component = null, $com_name = null , $template = null , $arParam = array()){
+        $com_url = $_SERVER['DOCUMENT_ROOT'].'/application/.components/';
+        $com_url_name = null;
         $arResult = array();
 
-        if(!empty($component)) $url .= $component.'/';
-        if(!empty($name)){
-            $url_name = $name.'/';
+        if(!empty($component)) $com_url .= $component.'/';
+        if(!empty($com_name)){
+            $com_url_name = $com_name.'/';
         }else{
-            $url_name = '.default/';
+            $com_url_name = '.default/';
         }
-
 
         // prolog
-        if(file_exists($url.$url_name.'.prolog.php')){
-            include ($url.$url_name.'.prolog.php');
+        if(file_exists($com_url.$com_url_name.'.prolog.php')){
+            include ($com_url.$com_url_name.'.prolog.php');
         }
-        elseif (file_exists($url.'.default/.prolog.php')){
-            include ($url.'.default/.prolog.php');
+        elseif (file_exists($com_url.'.default/.prolog.php')){
+            include ($com_url.'.default/.prolog.php');
         };
 
         // boot
-        if(file_exists($url.$url_name.'.boot.php')){
-            include ($url.$url_name.'.boot.php');
+        if(file_exists($com_url.$com_url_name.'.boot.php')){
+            include ($com_url.$com_url_name.'.boot.php');
         }
-        elseif (file_exists($url.'.default/.boot.php')){
-            include ($url.'.default/.boot.php');
+        elseif (file_exists($com_url.'.default/.boot.php')){
+            include ($com_url.'.default/.boot.php');
         };
 
         // template
         if(empty($template)) $template = '.template';
-        if(file_exists($url.$url_name.$template.'.php')) include ($url.$url_name.$template.'.php');
+        
+        if(file_exists($com_url.$com_url_name.$template.'.php')) {
+            include ($com_url.$com_url_name.$template.'.php');
+        }else{
+            echo $com_url.$com_url_name.$template.'.php - Шаблон вывода компонента не найден';
+        };
 
         // epilog
-        if(file_exists($url.'.epilog.php')){
-            include ($url.'.epilog.php');
+        if(file_exists($com_url.'.epilog.php')){
+            include ($com_url.'.epilog.php');
         }
-        elseif(file_exists($url.'.default/.epilog.php')){
-            include ($url.'.default/.epilog.php');
+        elseif(file_exists($com_url.'.default/.epilog.php')){
+            include ($com_url.'.default/.epilog.php');
         };
     }
     function detail($TYPE, $CODE , $table = 'module_element') {
@@ -246,7 +250,8 @@ class App extends CI_Model {
         }elseif (file_exists($url_default)){
             include ($url_default);
         }else{
-            echo 'Шаблон не найден';
+            echo $url;
+            echo ' - Шаблон не найден<br>';
         }
     }
     function template_footer($template = '.default'){
@@ -258,7 +263,8 @@ class App extends CI_Model {
         }elseif (file_exists($url_default)){
             include ($url_default);
         }else{
-            echo 'Шаблон не найден';
+            echo $url;
+            echo ' - Шаблон не найден<br>';
         }
     }
     function template($template = '.default', $name = null , $views = '.default', $arParam = array()){

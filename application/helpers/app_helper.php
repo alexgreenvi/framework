@@ -123,7 +123,7 @@ function get_date($date,$type){
 function get_config_app(){
     $arConfig = array();
 
-    $url = $_SERVER['DOCUMENT_ROOT'].'/local/.config.php';
+    $url = $_SERVER['DOCUMENT_ROOT'].'/local/.config/app.config.php';
     if(file_exists($url)){
         include ($url);
     }else{

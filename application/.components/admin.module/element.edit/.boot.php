@@ -5,16 +5,20 @@
  * @arResult массив результата
  * @arItem массив отдельного элемента
  */
-// Какой статус отправки
+// * Какой статус отправки
 $ajaxFormButton = null;
-if(isset($_POST['ajaxFormButton'])){
-    $ajaxFormButton = $_POST['ajaxFormButton'];
-}else{
-    $ajaxFormButton = false;
-}
+if(isset($_POST['ajaxFormButton'])) $ajaxFormButton = $_POST['ajaxFormButton']; else $ajaxFormButton = false;
 
-// * Выбираем все поля
+// * КАТЕГОРИИ
+// * Выбираем все категории
+$arParam['module_category'] = $this->db->query("SELECT * FROM module_category WHERE module_id = '".$arParam['post']['ajaxFormModuleId']."'")->result_array();
+
+// * Выбираем поля из тамблицы
+$fields = $this->db->list_fields('module_element');
+
+// * Cоздаем поля
 $arField = $this->app->module_get_field();
+
 // * Перебираем все поля
 // * Сравниваем с настройками модуля
 foreach ($arField as $name => $array) {
@@ -24,10 +28,14 @@ foreach ($arField as $name => $array) {
     // * Создаем поля для ошибок
     $arParam['module']['field'][$name]['error'] = '';
 }
-
-// Выбираем все поля из тамблицы
-$fields = $this->db->list_fields('module_element');
-
+// * Создаем не достоющие POST поля
+foreach ($fields as $field) {
+    if(isset($arParam['post'][$field])) {
+        $arBase[$field] = get_clean($arParam['post'][$field]);
+    }else{
+        $arParam['post'][$field] = '';
+    }
+}
 
 // * Для РЕДАКТИРОВАНИЯ
 // * Быбираем старые данные
@@ -43,22 +51,9 @@ if($_POST['ajaxForm'] == 'element_edit'){
     }
 }
 
-
-// * КАТЕГОРИИ
-// * Для выбора
-$arParam['module_category'] = $this->db->query("SELECT * FROM module_category WHERE module_id = '".$arParam['post']['ajaxFormModuleId']."'")->result_array();
-
-
-// * Создаем массив записи
-// * И добавляем все значения в него
-$arBase = array();
-foreach ($fields as $field) {
-    if(isset($arParam['post'][$field])) {
-        $arBase[$field] = get_clean($arParam['post'][$field]);
-    }else{
-        $arParam['post'][$field] = '';
-        $arBase[$field] = '';
-    }
+// * Если ключ (CODE) не указан, и материал добавляют, то выставить из названия
+if(empty($arParam['post']['code']) AND $ajaxFormButton == 'push' AND $arParam['type'] == 'element_add') {
+    $arParam['post']['code'] = get_url_code($arParam['post']['name']);
 }
 
 // * Проверка полей
@@ -72,12 +67,34 @@ foreach ($arParam['module']['field'] as $name => $array) {
     }
 }
 
-// * Проверяем CODE,  чтобы не было повторений
-if($this->db->query("SELECT code FROM module_element WHERE id !='".$arParam['post']['id']."' AND code='".$arParam['post']['code']."'")->row_array()) {
-    $error = true;
-    $arParam['module']['field']['code']['error']['text'] = 'Такой ключ уже используется';
+// * Проверяем CODE, чтобы не было повторений
+if($this->db->query("SELECT code FROM module_element WHERE id !='".$arParam['post']['id']."' AND code='".$arParam['post']['code']."'")->row_array()) {    
+    //  * Если это добавление то просто привавлять по +1 к коду повтора
+    if($ajaxFormButton == 'push' AND $arParam['type'] == 'element_add') {
+
+        // * Проверяем и добавляем заного новую цифру
+        $i = 1;
+        while ($this->db->query("SELECT code FROM module_element WHERE id !='".$arParam['post']['id']."' AND code='".$arParam['post']['code']."_".$i."'")->row_array()) {
+           $i ++;
+        }
+        $arParam['post']['code'] = $arParam['post']['code']."_".$i; 
+        
+    }else{
+        $error = true;
+        $arParam['module']['field']['code']['error']['text'] = 'Такой ключ уже используется';
+    }
 }
 
+// * Создаем массив записи
+// * И добавляем все значения в него
+$arBase = array();
+foreach ($fields as $field) {
+    if(!empty($arParam['post'][$field])) {
+        $arBase[$field] = get_clean($arParam['post'][$field]);
+    }else{
+        $arBase[$field] = '';
+    }
+}
 
 // * Остальные данные
 // * Что нужно подправить при добавлении

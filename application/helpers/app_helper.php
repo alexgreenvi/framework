@@ -156,3 +156,45 @@ function get_template_path(){
     $arConfig = get_config_app();
     return '/local/templates/'.$arConfig['template']['name'].'/';
 }
+function get_component_file_url($component = null, $com_name = null , $template = null, $name = ''){
+    $component_url         = $_SERVER['DOCUMENT_ROOT'].'/local/.components/';
+    $component_url_default = $_SERVER['DOCUMENT_ROOT'].'/application/.components/';
+    $conponent_name        = null;
+    $name                  = '.'.$name.'.php';
+    $name_tempale          = '.'.$template.'.php';
+
+    // * Название компонента
+    if(!empty($component)) {
+        $component_url         .= $component.'/';
+        $component_url_default .= $component.'/';
+    }
+
+     // * Подставляем правильное название
+    if(!empty($com_name)){
+        $conponent_name = $com_name.'/';
+    }else{
+        $conponent_name = '.default/';
+    }
+    
+    // * Для шаблонов 
+    // * 
+    if(file_exists($component_url.$conponent_name.$name_tempale) AND !empty($template) AND $name == 'template'){
+        return $component_url.$conponent_name.$name_tempale;
+    
+    // * Ищем файл в local c название
+    }elseif(file_exists($component_url.$conponent_name.$name)){
+        return $component_url.$conponent_name.$name;
+
+    // * Ищем файл в app c название
+    }elseif(file_exists($component_url_default.$conponent_name.$name)){
+        return $component_url_default.$conponent_name.$name;
+
+    // * Иначе подключаем стандартный
+    }elseif(file_exists($component_url_default.'.default/'.$name)){
+        return $component_url_default.'.default/'.$name;
+    
+    // * Иначе ничего не нашел
+    }else{
+        return false;
+    }
+}

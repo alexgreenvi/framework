@@ -2,49 +2,43 @@
 
 class App extends CI_Model {
     function component($component = null, $com_name = null , $template = null , $arParam = array()){
-        $com_url = $_SERVER['DOCUMENT_ROOT'].'/application/.components/';
-        $com_url_name = null;
-        $arResult = array();
+        $arResult        = array();
 
-        if(!empty($component)) $com_url .= $component.'/';
-        if(!empty($com_name)){
-            $com_url_name = $com_name.'/';
-        }else{
-            $com_url_name = '.default/';
-        }
-
-        // prolog
-        if(file_exists($com_url.$com_url_name.'.prolog.php')){
-            include ($com_url.$com_url_name.'.prolog.php');
-        }
-        elseif (file_exists($com_url.'.default/.prolog.php')){
-            include ($com_url.'.default/.prolog.php');
-        };
-
-        // boot
-        if(file_exists($com_url.$com_url_name.'.boot.php')){
-            include ($com_url.$com_url_name.'.boot.php');
-        }
-        elseif (file_exists($com_url.'.default/.boot.php')){
-            include ($com_url.'.default/.boot.php');
-        };
-
-        // template
-        if(empty($template)) $template = '.template';
+        // * Prolog
+        $component_url = get_component_file_url($component, $com_name , $template ,'prolog');
         
-        if(file_exists($com_url.$com_url_name.$template.'.php')) {
-            include ($com_url.$com_url_name.$template.'.php');
-        }else{
-            echo $com_url.$com_url_name.$template.'.php - Шаблон вывода компонента не найден';
-        };
-
-        // epilog
-        if(file_exists($com_url.'.epilog.php')){
-            include ($com_url.'.epilog.php');
+        if (file_exists($component_url)){
+            include ($component_url);
+        } else {
+            echo 'Файл .prolog компонента не найден <br>';
         }
-        elseif(file_exists($com_url.'.default/.epilog.php')){
-            include ($com_url.'.default/.epilog.php');
-        };
+
+        // * Boot
+        $component_url = get_component_file_url($component, $com_name , $template ,'boot');
+        
+        if (file_exists($component_url)){
+            include ($component_url);
+        } else {
+            echo 'Файл .boot компонента не найден <br>';
+        }
+
+        // * Template
+        $component_url = get_component_file_url($component, $com_name , $template ,'template');
+        
+        if (file_exists($component_url)){
+            include ($component_url);
+        } else {
+            echo 'Шаблог вывода компонента '.$template.' не найден <br>';
+        }
+
+        // * Epilog
+        $component_url = get_component_file_url($component, $com_name , $template ,'epilog');
+        
+        if (file_exists($component_url)){
+            include ($component_url);
+        } else {
+            echo 'Файл .epilog компонента не найден <br>';
+        }
     }
     function detail($TYPE, $CODE , $table = 'module_element') {
         if($TYPE == 'CODE'){

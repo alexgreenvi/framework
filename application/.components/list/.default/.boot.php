@@ -8,7 +8,12 @@
 
 // * Выбираем модуль
 $this->db->from('module');
-$this->db->where('id',$arParam['module_id']);
+// * 2 Варианта выборки по коду или по id
+if(isset($arParam['module_code'])) {
+    $this->db->where('code',$arParam['module_code']);
+}else {
+    $this->db->where('id',$arParam['module_id']);
+}
 
 $arParam['module'] = $this->db->get()->row_array();
 
@@ -20,7 +25,7 @@ if($arParam['type'] == 'category') {
     $this->db->from('module_element');
 }
 
-$this->db->where('module_id', $arParam['module_id']);
+$this->db->where('module_id', $arParam['module']['id']);
 
 $arResult = $this->db->get()->result_array();
 // =====

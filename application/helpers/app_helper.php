@@ -161,7 +161,7 @@ function get_component_file_url($component = null, $com_name = null , $template 
     $component_url_default = $_SERVER['DOCUMENT_ROOT'].'/application/.components/';
     $conponent_name        = null;
     $name                  = '.'.$name.'.php';
-    $name_tempale          = '.'.$template.'.php';
+    $name_tempale          = $template.'.php';
 
     // * Название компонента
     if(!empty($component)) {
@@ -178,7 +178,8 @@ function get_component_file_url($component = null, $com_name = null , $template 
     
     // * Для шаблонов 
     // * 
-    if(file_exists($component_url.$conponent_name.$name_tempale) AND !empty($template) AND $name == 'template'){
+
+    if(file_exists($component_url.$conponent_name.$name_tempale) AND !empty($template) AND $name == '.template.php'){
         return $component_url.$conponent_name.$name_tempale;
     
     // * Ищем файл в local c название

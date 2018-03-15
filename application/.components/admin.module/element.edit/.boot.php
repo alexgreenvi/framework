@@ -28,14 +28,6 @@ foreach ($arField as $name => $array) {
     // * Создаем поля для ошибок
     $arParam['module']['field'][$name]['error'] = '';
 }
-// * Создаем не достоющие POST поля
-foreach ($fields as $field) {
-    if(isset($arParam['post'][$field])) {
-        $arBase[$field] = get_clean($arParam['post'][$field]);
-    }else{
-        $arParam['post'][$field] = '';
-    }
-}
 
 // * Для РЕДАКТИРОВАНИЯ
 // * Быбираем старые данные
@@ -48,6 +40,15 @@ if($_POST['ajaxForm'] == 'element_edit'){
         if(!isset($arParam['post'][$field])) { // Если существует такое поле как в таблице
             $arParam['post'][$field] = $arParam['old'][$field];
         }
+    }
+}
+
+// * Создаем не достоющие POST поля
+foreach ($fields as $field) {
+    if(isset($arParam['post'][$field])) {
+        $arBase[$field] = get_clean($arParam['post'][$field]);
+    }else{
+        $arParam['post'][$field] = '';
     }
 }
 

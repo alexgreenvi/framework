@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <?$this->app->component('list' , 'admin.module' , '', [
-                    'module' => $arParam['code'],
+                    'module_code' => $arParam['code'],
                     'type' => '',
                     'table' => [
                         'name' => [
